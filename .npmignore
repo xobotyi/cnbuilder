@@ -1,0 +1,11 @@
+.github
+coverage
+tests
+benchmark
+.idea
+.gitignore
+.prettierignore
+.prettierrc
+.travis.yml
+CODE_OF_CONDUCT.md
+tsconfig.json

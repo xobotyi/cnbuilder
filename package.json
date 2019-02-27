@@ -1,0 +1,32 @@
+{
+  "name": "cnbuilder",
+  "version": "1.0.0",
+  "main": "dist/cnbuilder.js",
+  "module": "dist/cnbuilder.esm.js",
+  "types": "dist/cnbuilder.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xobotyi/cnbuilder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xobotyi/cnbuilder/issues"
+  },
+  "homepage": "https://github.com/xobotyi/cnbuilder",
+  "author": "Anton Zinovyev",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.3.2",
+    "rollup-plugin-typescript2": "^0.19.3",
+    "terser": "^3.16.1",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "format": "prettier --write src/**/*.ts tests/**/*.ts",
+    "build": "rimraf ./dist && rollup --config",
+    "minify": "terser ./dist/cnbuilder.js -o ./dist/cnbuilder.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=cnbuilder.js.map"
+  }
+}
