@@ -1,25 +1,30 @@
-import ts  from "rollup-plugin-typescript2";
-import pkg from './package.json';
+import ts from "rollup-plugin-typescript2";
+import pkg from "./package.json";
 
 export default {
-    input: "./src/index.ts",
+  input: "./src/index.ts",
 
-    output: [
-        {
-            file:   pkg.module,
-            format: 'es',
-        },
-        {
-            file:      pkg.main,
-            format:    'umd',
-            name:      "cnbuilder",
-            sourcemap: true,
-        },
-    ],
+  output: [
+    {
+      file: pkg.module,
+      format: "es"
+    },
+    {
+      file: pkg.main,
+      format: "umd",
+      name: "cnbuilder",
+      sourcemap: true
+    }
+  ],
 
-    plugins: [
-        ts({
-               clean: true,
-           }),
-    ],
+  plugins: [
+    ts({
+      clean: true,
+      tsconfigOverride: {
+        compilerOptions: {
+          module: "ESNext"
+        }
+      }
+    })
+  ]
 };

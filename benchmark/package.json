@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "start": ""
+    "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames,classcat,clsx && node dist/index.js"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",

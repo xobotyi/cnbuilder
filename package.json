@@ -25,7 +25,8 @@
   "author": "Anton Zinovyev",
   "license": "MIT",
   "dependencies": {
-    "@types/jest": "^24.0.9"
+    "@types/jest": "^24.0.9",
+    "pretty-quick": "^1.10.0"
   },
   "devDependencies": {
     "codacy-coverage": "^3.4.0",
@@ -41,7 +42,7 @@
   },
   "scripts": {
     "push-codacy-coverage": "cat ./coverage/lcov.info | codacy-coverage -p .",
-    "format": "prettier --write src/**/*.ts tests/**/*.ts",
+    "format": "prettier --write src/**/*.ts tests/**/*.ts benchmark/src/**/*.ts",
     "build": "rimraf ./dist && rollup --config",
     "minify": "terser ./dist/cnbuilder.js -o ./dist/cnbuilder.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=cnbuilder.js.map",
     "test": "jest",
@@ -51,7 +52,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && git add",
+      "pre-commit": "pretty-quick --staged",
       "post-commit": "git update-index -g"
     }
   },
