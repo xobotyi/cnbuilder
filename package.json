@@ -54,8 +54,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "post-commit": "git update-index -g"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "jest": {
