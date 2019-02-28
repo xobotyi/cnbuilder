@@ -12,7 +12,7 @@
 </div>
 
 One more DOM classname string builder if you not enough yet 😁  
-It is **[small](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has **no dependencies**!
+It is **[lightweight](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has **no dependencies**!
 
 Install it via [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com)
 
@@ -40,11 +40,17 @@ Or even just include it with a standalone `<script>` tag from [CDNJS](https://cd
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cnbuilder/1.0.0/cnbuilder.js" />
+
+<script type="application/javascript">
+  (() => {
+    cnbuilder("Hello", ["world!"]); // => "Hello world!"
+  })();
+</script>
 ```
 
 ### Why
 
-cnbuilder is designed to be as small and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster in some cases but less because does not allow to pass variable count of arguments).  
+`cnbuilder` is designed to be as lightweight and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster in some cases but less handy because does not allow to pass variable count of arguments).  
 It is written with power of [TypeScript](http://www.typescriptlang.org) and it's API is fully compatible with [JedWatson/classnames](https://github.com/JedWatson/classnames), so it wont be anyhow hard to migrate for you if you're already using `classnames` package.
 
 ### Usage
