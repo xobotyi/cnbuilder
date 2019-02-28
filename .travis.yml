@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "stable"
+  - "9"
+  - "10"
+
+matrix:
+  fast_finish: true
+
+cache:
+  directories:
+    - "node_modules"
+
+script:
+  - npm run test
+
+after_success:
+  - npm run push-codacy-coverage
