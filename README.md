@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>cnbuiler</h1>
+  <h1>cnbuilder</h1>
   <p>
       <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/badge/npm-cnbuilder-brightgreen.svg" /></a>
       <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/npm/v/cnbuilder.svg" /></a>
@@ -81,7 +81,7 @@ cnb("a", arr); // => 'a b c'
 - it does not generate useless spaces:
   ```javascript
   classnames("test", [], { a: false }); // => "test " (4 chars with space at the end)
-  cnb("test", [], { a: false }); // => "321" (4 chars with space at the end)
+  cnb("test", [], { a: false }); // => "test" (just 4 chars)
   ```
 - it skips fully numeric classnames, due to classnames starting with digit are illegal, but it **can't** skip strings starting with digit, cause it would impact the performance, so that part is left for the end developer
   ```javascript
