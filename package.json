@@ -1,6 +1,6 @@
 {
   "name": "cnbuilder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/cnbuilder.js",
   "module": "dist/cnbuilder.esm.js",
   "types": "dist/cnbuilder.d.ts",
