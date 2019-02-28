@@ -44,7 +44,7 @@ Or even just include it with a standalone `<script>` tag from [CDNJS](https://cd
 
 ### Why
 
-cnbuilder is designed to be as small and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster but less functional due to not allow to pass variable count of arguments).  
+cnbuilder is designed to be as small and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster in some cases but less because does not allow to pass variable count of arguments).  
 It is written with power of [TypeScript](http://www.typescriptlang.org) and it's API is fully compatible with [JedWatson/classnames](https://github.com/JedWatson/classnames), so it wont be anyhow hard to migrate for you if you're already using `classnames` package.
 
 ### Usage
@@ -92,6 +92,11 @@ cnb("a", arr); // => 'a b c'
 #### Dynamic class names with ES2015
 
 If you're in an environment that supports [computed keys](http://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer) (available in ES2015 and Babel) you can use dynamic class names:
+
+```javascript
+let buttonType = "primary";
+cnb({ [`btn-${buttonType}`]: true });
+```
 
 ### Polyfills needed to support older browsers
 
