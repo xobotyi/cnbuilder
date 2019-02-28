@@ -1,7 +1,7 @@
 <div align="center">
   <h1>cnbuiler</h1>
   <p>
-      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/badge/npm-react--scrollbars--custom-brightgreen.svg" /></a>
+      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/badge/npm-cnbuilder-brightgreen.svg" /></a>
       <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/npm/v/cnbuilder.svg" /></a>
       <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/npm/dt/cnbuilder.svg" /></a>
       <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/travis/xobotyi/cnbuilder.svg" /></a>
@@ -12,7 +12,7 @@
 </div>
 
 One more DOM classname string builder if you not enough yet 😁  
-It is **small**, **fast** and has **no dependencies**!
+It is **[small](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has **no dependencies**!
 
 Install it via [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com)
 
