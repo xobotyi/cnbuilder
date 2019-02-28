@@ -1,12 +1,18 @@
-export type Class = string | ClassObject | ClassArray;
+export type ClassValue =
+  | string
+  | null
+  | boolean
+  | undefined
+  | ClassListDictionary
+  | ClassListArray;
 
-export interface ClassObject {
-  [key: string]: boolean | any;
+export interface ClassListDictionary {
+  [cn: string]: boolean | undefined | any;
 }
 
-export interface ClassArray extends Array<Class> {}
+export interface ClassListArray extends Array<ClassValue> {}
 
-export default function cnb(...args: ClassArray): string {
+export default function cnb(...args: ClassListArray): string {
   return <string>(
     (args.length
       ? args.length > 1
@@ -16,36 +22,34 @@ export default function cnb(...args: ClassArray): string {
   );
 }
 
-const arrayReducer = (result: string, item: Class): string => {
+const arrayReducer = (result: string, item: ClassValue): string => {
   let type = typeof item;
 
   if (type === "string") {
     return item ? result + (result && " ") + item : result;
   }
 
-  let tmp = "";
-
   if (Array.isArray(item)) {
-    tmp = <string>(
-      (item.length
-        ? item.length > 1
-          ? item.reduce(arrayReducer, "")
-          : arrayReducer("", item[0])
-        : "")
-    );
+    let tmp = item.length
+      ? item.length > 1
+        ? item.reduce(arrayReducer, "")
+        : arrayReducer("", item[0])
+      : "";
 
     return tmp ? result + (result && " ") + tmp : result;
   }
 
-  if (type !== "object") {
-    return result;
-  }
+  if (type === "object" && item) {
+    let tmp = "";
 
-  for (let i in <ClassObject>item) {
-    if (item.hasOwnProperty(i) && item[i]) {
-      tmp += (tmp && " ") + i;
+    for (let i in <ClassListDictionary>item) {
+      if (item[i] && item.hasOwnProperty(i)) {
+        tmp += (tmp && " ") + i;
+      }
     }
+
+    return tmp ? result + (result && " ") + tmp : result;
   }
 
-  return tmp ? result + (result && " ") + tmp : result;
+  return result;
 };

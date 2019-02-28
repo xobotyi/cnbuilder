@@ -119,16 +119,19 @@ npm run build && npm i -C benchmark && npm -C benchmark start
 
 <pre>
 # STRINGS
-<em>cnbuilder   × 8,836,828 ops/sec;</em>
-classcat    × 8,400,103 ops/sec;
-classnames  × 2,965,358 ops/sec;
-clsx        × 8,655,090 ops/sec;
+
+<em>cnbuilder   × 8,701,868 ops/sec;</em>
+classcat    × 7,911,685 ops/sec;
+classnames  × 3,088,099 ops/sec;
+clsx        × 8,612,809 ops/sec;
+
 
 # OBJECTS
-cnbuilder   × 5,882,489 ops/sec;
-<em>classcat    × 6,524,113 ops/sec;</em>
-classnames  × 2,542,451 ops/sec;
-clsx        × 5,025,306 ops/sec;
+cnbuilder   × 6,021,927 ops/sec;
+<em>classcat    × 6,945,229 ops/sec;</em>
+classnames  × 2,655,956 ops/sec;
+clsx        × 5,112,441 ops/sec;
+
 
 # ARRAYS
 cnbuilder   × 4,800,036 ops/sec;
@@ -137,10 +140,10 @@ classnames  × 1,173,988 ops/sec;
 clsx        × 1,179,686 ops/sec;
 
 # NESTED ARRAYS
-<em>cnbuilder   × 3,090,131 ops/sec;</em>
-classcat    × 1,427,428 ops/sec;
-classnames  ×   822,602 ops/sec;
-clsx        ×   674,716 ops/sec;
+<em>cnbuilder   × 3,151,680 ops/sec;</em>
+classcat    × 1,464,098 ops/sec;
+classnames  × 846,011 ops/sec;
+clsx        × 682,692 ops/sec;
 
 # OBJECTS NESTED IN ARRAYS
 cnbuilder   × 3,361,427 ops/sec;
@@ -153,4 +156,10 @@ cnbuilder   × 3,636,334 ops/sec;
 <em>classcat    × 5,284,783 ops/sec;</em>
 classnames  × 1,533,224 ops/sec;
 clsx        × 1,639,769 ops/sec;
+
+# MIXED WITH WRONG DATA
+<em>cnbuilder   × 830,830 ops/sec;</em>
+classcat    × 739,116 ops/sec;
+classnames  × 761,426 ops/sec;
+clsx        × 663,396 ops/sec;
 </pre>
