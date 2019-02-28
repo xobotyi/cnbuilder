@@ -36,10 +36,10 @@ import cnb from "cnbuilder";
 cnb("works", { with: true }, ["ESM!"]); // => 'works with ESM!'
 ```
 
-Or even just include it with a standalone `<script>` tag from [CDNJS](https://cdnjs.com/libraries/cnbuilder)
+Or even just include it with a standalone `<script>` tag from [UNPKG CDN](https://unpkg.com/cnbuilder/)
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cnbuilder/1.0.0/cnbuilder.js" />
+<script src="https://unpkg.com/cnbuilder" />
 
 <script type="application/javascript">
   (() => {
