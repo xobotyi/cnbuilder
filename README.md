@@ -12,7 +12,8 @@
 </div>
 
 One more DOM classname string builder if you not enough yet 😁  
-It is **[lightweight](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has **no dependencies**!
+It is **[lightweight](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has **no dependencies**!  
+Designed to be fastest full-feature drop-in replacement for `classnames` package.
 
 Install it via [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com)
 
