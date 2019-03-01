@@ -67,6 +67,9 @@
     },
     "testRegex": "/tests/.*\\.spec\\.(ts|tsx|js)$",
     "coverageDirectory": "./coverage",
-    "collectCoverage": true
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
   }
 }
