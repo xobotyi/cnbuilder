@@ -65,7 +65,7 @@
     "transform": {
       "\\.(ts|tsx)$": "ts-jest"
     },
-    "testRegex": "/tests/.*\\.spec\\.(ts|tsx|js)$",
+    "testRegex": "/tests/.*\\.spec\\.(ts|tsx)$",
     "coverageDirectory": "./coverage",
     "collectCoverage": true,
     "collectCoverageFrom": [
