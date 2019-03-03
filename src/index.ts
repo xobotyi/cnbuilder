@@ -12,7 +12,7 @@ export interface ClassListDictionary {
 
 export interface ClassListArray extends Array<ClassValue> {}
 
-export default function cnb(...args: ClassListArray): string {
+export const cnb = function cnb(...args: ClassListArray): string {
   return <string>(
     (args.length
       ? args.length > 1
@@ -20,7 +20,8 @@ export default function cnb(...args: ClassListArray): string {
         : arrayReducer("", args[0])
       : "")
   );
-}
+};
+export default cnb;
 
 const arrayReducer = (result: string, item: ClassValue): string => {
   let type = typeof item;
