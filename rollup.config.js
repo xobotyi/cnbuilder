@@ -8,13 +8,15 @@ export default {
   output: [
     {
       file: pkg.module,
-      format: "es"
+      format: "es",
+      exports: "named"
     },
     {
       file: pkg.main,
       format: "umd",
       name: "cnbuilder",
-      sourcemap: true
+      sourcemap: true,
+      exports: "named"
     }
   ],
 
