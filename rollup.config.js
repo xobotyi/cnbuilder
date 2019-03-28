@@ -1,3 +1,4 @@
+import babel from "rollup-plugin-babel";
 import ts from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
@@ -25,6 +26,23 @@ export default {
           module: "ESNext"
         }
       }
+    }),
+    babel({
+      babelrc: false,
+      exclude: "node_modules/**",
+      extensions: [".ts", ".tsx", ".js", ".jsx"],
+      presets: [
+        [
+          "@babel/preset-env",
+          {
+            targets: {
+              esmodules: false,
+              chrome: "52",
+              ie: "11"
+            }
+          }
+        ]
+      ]
     })
   ]
 };
