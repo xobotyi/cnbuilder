@@ -12,17 +12,6 @@ export interface ClassListDictionary {
 
 export interface ClassListArray extends Array<ClassValue> {}
 
-export const cnb = function cnb(...args: ClassListArray): string {
-  return <string>(
-    (args.length
-      ? args.length > 1
-        ? args.reduce(arrayReducer, "")
-        : arrayReducer("", args[0])
-      : "")
-  );
-};
-export default cnb;
-
 const arrayReducer = (result: string, item: ClassValue): string => {
   const type = typeof item;
 
@@ -31,7 +20,7 @@ const arrayReducer = (result: string, item: ClassValue): string => {
   }
 
   if (Array.isArray(item)) {
-    let tmp = item.length
+    const tmp = item.length
       ? item.length > 1
         ? item.reduce(arrayReducer, "")
         : arrayReducer("", item[0])
@@ -54,3 +43,14 @@ const arrayReducer = (result: string, item: ClassValue): string => {
 
   return result;
 };
+
+export const cnb = function cnb(...args: ClassListArray): string {
+  return <string>(
+    (args.length
+      ? args.length > 1
+        ? args.reduce(arrayReducer, "")
+        : arrayReducer("", args[0])
+      : "")
+  );
+};
+export default cnb;
