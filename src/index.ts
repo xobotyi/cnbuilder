@@ -55,7 +55,7 @@ const arrayReduce = (args: ClassListArray | IArguments): string => {
   return res;
 };
 
-export const cnb = function cnb(): string {
+export const cnb = <{ (...args: ClassListArray): string }>function cnb() {
   return arrayReduce(arguments);
 };
 export default cnb;
