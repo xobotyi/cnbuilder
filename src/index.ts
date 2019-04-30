@@ -16,8 +16,8 @@ const isArray = Array.isArray;
 const hasProp = Object.prototype.hasOwnProperty;
 
 const arrayReduce = (args: ClassListArray | IArguments): string => {
+  const len = args.length;
   let res = "",
-    len = args.length,
     item,
     type,
     i,
@@ -55,7 +55,7 @@ const arrayReduce = (args: ClassListArray | IArguments): string => {
   return res;
 };
 
-export const cnb = <{ (...args: ClassListArray): string }>function cnb() {
+export const cnb = <(...args: ClassListArray) => string>function cnb() {
   return arrayReduce(arguments);
 };
 export default cnb;
