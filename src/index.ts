@@ -24,7 +24,7 @@ export const cnb = function cnb(...args: ClassListArray): string {
 export default cnb;
 
 const arrayReducer = (result: string, item: ClassValue): string => {
-  let type = typeof item;
+  const type = typeof item;
 
   if (type === "string") {
     return item ? result + (result && " ") + item : result;
@@ -43,7 +43,7 @@ const arrayReducer = (result: string, item: ClassValue): string => {
   if (type === "object" && item) {
     let tmp = "";
 
-    for (let i in <ClassListDictionary>item) {
+    for (const i in <ClassListDictionary>item) {
       if (item[i] && item.hasOwnProperty(i)) {
         tmp += (tmp && " ") + i;
       }
