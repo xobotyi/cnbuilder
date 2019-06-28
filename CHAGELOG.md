@@ -1,3 +1,7 @@
+## 1.1.1 / 2019.06.29
+
+- Improved terser configs so we got more compact bundle;
+
 ## 1.1.0 / 2019.06.28
 
 - Squeezed a bit more performance;
