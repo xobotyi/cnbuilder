@@ -46,7 +46,7 @@
     "push-codacy-coverage": "cat ./coverage/lcov.info | codacy-coverage",
     "format": "prettier --write src/**/*.ts tests/**/*.ts benchmark/src/**/*.ts src/**/*.js tests/**/*.js benchmark/src/**/*.js *.js *.ts",
     "build": "rimraf ./dist && rollup --config && npm run minify",
-    "minify": "terser ./dist/cnbuilder.js -o ./dist/cnbuilder.js -mc pure_funcs=['Object.defineProperty'] --source-map includeSources,url=cnbuilder.js.map",
+    "minify": "terser ./dist/cnbuilder.js -o ./dist/cnbuilder.js -mc pure_funcs=['Object.defineProperty'] --toplevel --source-map includeSources,url=cnbuilder.js.map",
     "test": "jest",
     "preversion": "npm run format && npm run build",
     "postversion": "git push && git push --tags",

@@ -8,7 +8,7 @@ export interface ClassListArray extends Array<ClassValue> {}
 
 const h = Object.prototype.hasOwnProperty;
 
-const r = (args: ClassListArray | IArguments): string => {
+const reduceArray = (args: ClassListArray | IArguments): string => {
   const len = args.length;
 
   if (!len) return "";
@@ -32,7 +32,7 @@ const r = (args: ClassListArray | IArguments): string => {
     if (type !== "object") continue;
 
     if (item.push) {
-      if (item.length && (item = r(item))) {
+      if (item.length && (item = reduceArray(item))) {
         str && (str += " "), (str += item);
       }
     } else {
@@ -49,5 +49,5 @@ const r = (args: ClassListArray | IArguments): string => {
 
 export default function cnb(...args: ClassListArray): string;
 export default function cnb(): string {
-  return r(arguments);
+  return reduceArray(arguments);
 }
