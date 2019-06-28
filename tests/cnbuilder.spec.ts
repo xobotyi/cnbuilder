@@ -1,4 +1,4 @@
-import cnb from "../src";
+import cnb from "../src/index";
 
 describe("cnbuilder", () => {
   it("should build from strings", () => {
@@ -25,9 +25,7 @@ describe("cnbuilder", () => {
   });
 
   it("should build from mixed args", () => {
-    expect(
-      cnb("foo", ["bar", { baz: true, bux: false }], { bax: true, abc: false })
-    ).toBe("foo bar baz bax");
+    expect(cnb("foo", ["bar", { baz: true, bux: false }], { bax: true, abc: false })).toBe("foo bar baz bax");
   });
 
   it("should ignore wrong args", () => {
@@ -54,8 +52,6 @@ describe("cnbuilder", () => {
 
   it("should ignore empty strings, empty arrays, empty build results (not add extra spaces)", () => {
     //@ts-ignore
-    expect(cnb([""], "foo", { "": true }, "bar", "", "baz", [])).toBe(
-      "foo bar baz"
-    );
+    expect(cnb([""], "foo", { "": true }, "bar", "", "baz", [])).toBe("foo bar baz");
   });
 });

@@ -1,4 +1,5 @@
-import babel from "rollup-plugin-babel";
+// console.log(require("./dist/cnbuilder.js"));
+
 import ts from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
@@ -8,15 +9,12 @@ export default {
   output: [
     {
       file: pkg.module,
-      format: "es",
-      exports: "named"
+      format: "es"
     },
     {
       file: pkg.main,
-      format: "umd",
-      name: "cnbuilder",
-      sourcemap: true,
-      exports: "named"
+      format: "cjs",
+      sourcemap: true
     }
   ],
 
@@ -25,26 +23,10 @@ export default {
       clean: true,
       tsconfigOverride: {
         compilerOptions: {
-          module: "ESNext"
+          module: "esnext",
+          target: "es3"
         }
       }
-    }),
-    babel({
-      babelrc: false,
-      exclude: "node_modules/**",
-      extensions: [".ts", ".tsx", ".js", ".jsx"],
-      presets: [
-        [
-          "@babel/preset-env",
-          {
-            targets: {
-              esmodules: false,
-              chrome: "52",
-              ie: "11"
-            }
-          }
-        ]
-      ]
     })
   ]
 };

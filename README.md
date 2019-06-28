@@ -37,21 +37,11 @@ import cnb from "cnbuilder";
 cnb("works", { with: true }, ["ESM!"]); // => 'works with ESM!'
 ```
 
-Or even just include it with a standalone `<script>` tag from [UNPKG CDN](https://unpkg.com/cnbuilder/)
-
-```html
-<script src="https://unpkg.com/cnbuilder" />
-
-<script type="application/javascript">
-  (() => {
-    cnbuilder("Hello", ["world!"]); // => "Hello world!"
-  })();
-</script>
-```
+````
 
 ### Why
 
-`cnbuilder` is designed to be as lightweight and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster in some cases but less handy because does not allow to pass variable count of arguments).  
+`cnbuilder` is designed to be as lightweight and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster in some cases but less handy because does not allow to pass variable count of arguments).
 It is written with power of [TypeScript](http://www.typescriptlang.org) and it's API is fully compatible with [JedWatson/classnames](https://github.com/JedWatson/classnames), so it wont be anyhow hard to migrate for you if you're already using `classnames` package.
 
 ### Usage
@@ -74,7 +64,7 @@ cnb("foo", { bar: true, duck: false }, "baz", { quux: true }); // => 'foo bar ba
 
 // other falsy values are just ignored
 cnb(null, false, "bar", undefined, 0, 1, { baz: null }, ""); // => 'bar 1'
-```
+````
 
 Arrays will be recursively flattened as per the rules above:
 
@@ -120,47 +110,44 @@ npm run build && npm i -C benchmark && npm -C benchmark start
 
 <pre>
 # STRINGS
-
-<em>cnbuilder   × 8,701,868 ops/sec;</em>
-classcat    × 7,911,685 ops/sec;
-classnames  × 3,088,099 ops/sec;
-clsx        × 8,612,809 ops/sec;
-
+classcat    × 7,817,007 ops/sec;
+classnames  × 3,039,813 ops/sec;
+clsx        × 8,455,870 ops/sec;
+<string><em>cnbuilder   × 9,001,686 ops/sec;</em></string>
 
 # OBJECTS
-cnbuilder   × 6,021,927 ops/sec;
-<em>classcat    × 6,945,229 ops/sec;</em>
-classnames  × 2,655,956 ops/sec;
-clsx        × 5,112,441 ops/sec;
-
+classcat    × 6,783,071 ops/sec;
+classnames  × 2,623,124 ops/sec;
+clsx        × 5,247,541 ops/sec;
+<string><em>cnbuilder   × 7,197,917 ops/sec;</em></string>
 
 # ARRAYS
-cnbuilder   × 4,800,036 ops/sec;
-<em>classcat    × 5,858,583 ops/sec;</em>
-classnames  × 1,173,988 ops/sec;
-clsx        × 1,179,686 ops/sec;
+<string><em>classcat    × 6,189,615 ops/sec;</em></string>
+classnames  × 1,222,725 ops/sec;
+clsx        × 5,512,391 ops/sec;
+cnbuilder   × 5,839,618 ops/sec;
 
 # NESTED ARRAYS
-<em>cnbuilder   × 3,151,680 ops/sec;</em>
-classcat    × 1,464,098 ops/sec;
-classnames  × 846,011 ops/sec;
-clsx        × 682,692 ops/sec;
+classcat    × 1,433,007 ops/sec;
+classnames  × 821,668 ops/sec;
+<string><em>clsx        × 4,064,528 ops/sec;</em></string>
+cnbuilder   × 3,653,864 ops/sec;
 
 # OBJECTS NESTED IN ARRAYS
-cnbuilder   × 3,361,427 ops/sec;
-<em>classcat    × 4,805,079 ops/sec;</em>
-classnames  × 1,099,372 ops/sec;
-clsx        × 1,003,921 ops/sec;
+<string><em>classcat    × 4,745,927 ops/sec;</em></string>
+classnames  × 1,124,121 ops/sec;
+clsx        × 3,393,440 ops/sec;
+cnbuilder   × 3,894,376 ops/sec;
 
 # MIXED
-cnbuilder   × 3,636,334 ops/sec;
-<em>classcat    × 5,284,783 ops/sec;</em>
-classnames  × 1,533,224 ops/sec;
-clsx        × 1,639,769 ops/sec;
+<string><em>classcat    × 5,226,767 ops/sec;</em></string>
+classnames  × 1,569,844 ops/sec;
+clsx        × 3,857,523 ops/sec;
+cnbuilder   × 4,430,334 ops/sec;
 
 # MIXED WITH WRONG DATA
-<em>cnbuilder   × 830,830 ops/sec;</em>
-classcat    × 739,116 ops/sec;
-classnames  × 761,426 ops/sec;
-clsx        × 663,396 ops/sec;
+classcat    × 682,359 ops/sec;
+classnames  × 737,083 ops/sec;
+<string><em>clsx        × 1,107,078 ops/sec;</em></string>
+cnbuilder   × 1,087,857 ops/sec;
 </pre>

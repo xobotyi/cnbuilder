@@ -1,10 +1,4 @@
-export type ClassValue =
-  | string
-  | null
-  | boolean
-  | undefined
-  | ClassListDictionary
-  | ClassListArray;
+export type ClassValue = string | null | boolean | undefined | ClassListDictionary | ClassListArray;
 
 export interface ClassListDictionary {
   [cn: string]: boolean | undefined | any;
@@ -12,50 +6,48 @@ export interface ClassListDictionary {
 
 export interface ClassListArray extends Array<ClassValue> {}
 
-const isArray = Array.isArray;
-const hasProp = Object.prototype.hasOwnProperty;
+const h = Object.prototype.hasOwnProperty;
 
-const arrayReduce = (args: ClassListArray | IArguments): string => {
+const r = (args: ClassListArray | IArguments): string => {
   const len = args.length;
-  let res = "",
+
+  if (!len) return "";
+
+  let str = "",
     item,
     type,
     i,
     n;
 
   for (i = 0; i < len; i++) {
-    if (!args[i]) {
-      continue;
-    }
-    item = args[i];
+    if (!(item = args[i])) continue;
+
     type = typeof item;
 
     if (type === "string") {
-      res += (res && " ") + item;
+      str && (str += " "), (str += item);
       continue;
     }
 
-    if (isArray(item)) {
-      if ((item = arrayReduce(item))) {
-        res += (res && " ") + item;
+    if (type !== "object") continue;
+
+    if (item.push) {
+      if (item.length && (item = r(item))) {
+        str && (str += " "), (str += item);
       }
-
-      continue;
-    }
-
-    if (type === "object") {
+    } else {
       for (n in item) {
-        if (hasProp.call(item, n) && item[n] && n) {
-          res += (res && " ") + n;
+        if (h.call(item, n) && item[n] && n) {
+          str && (str += " "), (str += n);
         }
       }
     }
   }
 
-  return res;
+  return str;
 };
 
-export const cnb = <(...args: ClassListArray) => string>function cnb() {
-  return arrayReduce(arguments);
-};
-export default cnb;
+export default function cnb(...args: ClassListArray): string;
+export default function cnb(): string {
+  return r(arguments);
+}
