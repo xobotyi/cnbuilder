@@ -7,7 +7,7 @@ export default [
 
     output: [
       {
-        file: pkg.module,
+        file: pkg.esnext,
         format: "es"
       }
     ],
@@ -26,13 +26,20 @@ export default [
   },
   {
     input: "./src/index.ts",
+
     output: [
       {
         file: pkg.main,
         format: "cjs",
-        sourcemap: true
+        sourcemap: true,
+        exports: "named"
+      },
+      {
+        file: pkg.module,
+        format: "esm"
       }
     ],
+
     plugins: [
       ts({
         clean: true,
