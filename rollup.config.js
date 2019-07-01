@@ -8,8 +8,7 @@ export default [
     output: [
       {
         file: pkg.esnext,
-        format: "es",
-        exports: "named"
+        format: "es"
       }
     ],
 
