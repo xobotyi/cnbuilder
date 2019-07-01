@@ -1,6 +1,6 @@
 {
   "name": "cnbuilder",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "main": "dist/cnbuilder.js",
   "module": "dist/cnbuilder.mjs",
   "esnext": "dist/cnbuilder.next.mjs",
