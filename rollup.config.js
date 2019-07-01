@@ -8,7 +8,8 @@ export default [
     output: [
       {
         file: pkg.esnext,
-        format: "es"
+        format: "es",
+        exports: "named"
       }
     ],
 
@@ -31,8 +32,7 @@ export default [
       {
         file: pkg.main,
         format: "cjs",
-        sourcemap: true,
-        exports: "named"
+        sourcemap: true
       },
       {
         file: pkg.module,
