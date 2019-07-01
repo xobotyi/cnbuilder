@@ -6,7 +6,8 @@ export interface ClassListDictionary {
 
 export interface ClassListArray extends Array<ClassValue> {}
 
-const h = Object.prototype.hasOwnProperty;
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+const isArray = Array.isArray;
 
 const reduceArray = (args: ClassListArray | IArguments): string => {
   const len = args.length;
@@ -31,13 +32,13 @@ const reduceArray = (args: ClassListArray | IArguments): string => {
 
     if (type !== "object") continue;
 
-    if (item.push) {
+    if (isArray(item)) {
       if (item.length && (item = reduceArray(item))) {
         str && (str += " "), (str += item);
       }
     } else {
       for (n in item) {
-        if (h.call(item, n) && item[n] && n) {
+        if (hasOwnProperty.call(item, n) && item[n] && n) {
           str && (str += " "), (str += n);
         }
       }
