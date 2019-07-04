@@ -1,7 +1,7 @@
 export type ClassValue = string | null | boolean | undefined | ClassListDictionary | ClassListArray;
 
 export interface ClassListDictionary {
-  [cn: string]: boolean | undefined | any;
+  [cn: string]: boolean | undefined | null;
 }
 
 export interface ClassListArray extends Array<ClassValue> {}
@@ -9,46 +9,41 @@ export interface ClassListArray extends Array<ClassValue> {}
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const isArray = Array.isArray;
 
-const reduceArray = (args: ClassListArray | IArguments): string => {
-  const len = args.length;
+export default function cnb(...args: ClassListArray): string;
+export default function cnb(): string {
+  const len = arguments.length;
 
   if (!len) return "";
 
   let str = "",
     item,
-    type,
     i,
     n;
 
   for (i = 0; i < len; i++) {
-    if (!(item = args[i])) continue;
+    if (!(item = arguments[i])) continue;
 
-    type = typeof item;
-
-    if (type === "string") {
+    if (typeof item === "string") {
       str && (str += " "), (str += item);
       continue;
     }
 
-    if (type !== "object") continue;
+    if (typeof item !== "object") continue;
 
-    if (isArray(item)) {
-      if (item.length && (item = reduceArray(item))) {
+    if (item.push && isArray(item)) {
+      if ((item = cnb.apply(this, item))) {
         str && (str += " "), (str += item);
       }
-    } else {
-      for (n in item) {
-        if (hasOwnProperty.call(item, n) && item[n] && n) {
-          str && (str += " "), (str += n);
-        }
+
+      continue;
+    }
+
+    for (n in item) {
+      if (hasOwnProperty.call(item, n) && item[n] && n) {
+        str && (str += " "), (str += n);
       }
     }
   }
 
   return str;
-};
-
-export default function cnb(...args: ClassListArray): string;
-export default function cnb(): string {
-  return reduceArray(arguments);
 }
