@@ -6,8 +6,9 @@
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
-    "classcat": "^3.2.5",
+    "classcat": "^4.0.2",
     "classnames": "^2.2.6",
-    "clsx": "^1.0.4"
+    "clsx": "^1.1.0",
+    "cnbuilder": "^1.1.7"
   }
 }

@@ -2,6 +2,7 @@ import { Suite } from "benchmark";
 import classcat from "classcat";
 import classnames from "classnames";
 import clsx from "clsx";
+import npmCnb from "cnbuilder";
 const cnb = require("../../dist/cnbuilder");
 
 console.log(`\n# STRINGS`);
@@ -10,6 +11,7 @@ new Suite()
     console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
   )
   .add("cnbuilder  ", () => cnb("foo", "", "bar", "baz", "bax", "bux"))
+  .add("cnbuilder[npm]", () => npmCnb("foo", "", "bar", "baz", "bax", "bux"))
   .add("classcat   ", () => classcat(["foo", "", "bar", "baz", "bax", "bux"]))
   .add("classnames ", () => classnames("foo", "", "bar", "baz", "bax", "bux"))
   .add("clsx       ", () => clsx("foo", "", "bar", "baz", "bax", "bux"))
@@ -21,8 +23,14 @@ new Suite()
     console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
   )
   .add("cnbuilder  ", () => cnb({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true }))
+  .add("cnbuilder[npm]", () =>
+    npmCnb({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true })
+  )
   .add("classcat   ", () =>
-    classcat([{ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true }])
+    classcat([
+      { foo: true, bar: true, bax: true, bux: false },
+      { baz: true, bax: false, bux: true }
+    ])
   )
   .add("classnames ", () =>
     classnames({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true })
@@ -36,7 +44,13 @@ new Suite()
     console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
   )
   .add("cnbuilder  ", () => cnb(["foo", "bar"], ["baz", "bax", "bux"]))
-  .add("classcat   ", () => classcat([["foo", "bar"], ["baz", "bax", "bux"]]))
+  .add("cnbuilder[npm]", () => npmCnb(["foo", "bar"], ["baz", "bax", "bux"]))
+  .add("classcat   ", () =>
+    classcat([
+      ["foo", "bar"],
+      ["baz", "bax", "bux"]
+    ])
+  )
   .add("classnames ", () => classnames(["foo", "bar"], ["baz", "bax", "bux"]))
   .add("clsx       ", () => clsx(["foo", "bar"], ["baz", "bax", "bux"]))
   .run();
@@ -47,7 +61,13 @@ new Suite()
     console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
   )
   .add("cnbuilder  ", () => cnb(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
-  .add("classcat   ", () => classcat([["foo", ["bar"]], ["baz", ["bax", ["bux"]]]]))
+  .add("cnbuilder[npm]", () => npmCnb(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
+  .add("classcat   ", () =>
+    classcat([
+      ["foo", ["bar"]],
+      ["baz", ["bax", ["bux"]]]
+    ])
+  )
   .add("classnames ", () => classnames(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
   .add("clsx       ", () => clsx(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
   .run();
@@ -58,8 +78,14 @@ new Suite()
     console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
   )
   .add("cnbuilder  ", () => cnb(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }]))
+  .add("cnbuilder[npm]", () =>
+    npmCnb(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }])
+  )
   .add("classcat   ", () =>
-    classcat([["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }]])
+    classcat([
+      ["foo", { bar: true, bax: true, bux: false }],
+      ["bax", { bax: false, bux: true }]
+    ])
   )
   .add("classnames ", () =>
     classnames(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }])
@@ -73,6 +99,7 @@ new Suite()
     console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
   )
   .add("cnbuilder  ", () => cnb("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
+  .add("cnbuilder[npm]", () => npmCnb("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
   .add("classcat   ", () => classcat(["foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]]))
   .add("classnames ", () => classnames("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
   .add("clsx       ", () => clsx("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
@@ -85,6 +112,13 @@ new Suite()
   )
   .add("cnbuilder  ", () =>
     cnb("foo", "bar", undefined, () => {}, { bax: true, bux: false, 123: true }, [
+      "baz",
+      { bax: false, bux: true, abc: null },
+      {}
+    ])
+  )
+  .add("cnbuilder[npm]", () =>
+    npmCnb("foo", "bar", undefined, () => {}, { bax: true, bux: false, 123: true }, [
       "baz",
       { bax: false, bux: true, abc: null },
       {}
