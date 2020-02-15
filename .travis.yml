@@ -1,18 +1,31 @@
-language: node_js
-node_js:
-  - "stable"
-  - "9"
-  - "10"
+os: linux
 
-matrix:
-  fast_finish: true
+language: node_js
+node_js: 12
 
 cache:
-  directories:
-    - "node_modules"
+  yarn: true
 
 script:
   - npm run test
 
 after_success:
   - npm run push-codacy-coverage
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - yarn lint
+        - yarn build
+        - yarn test
+      after_script:
+        - yarn add -D codacy-coverage
+        - cat ./coverage/lcov.info | codacy-coverage
+
+    - stage: release semantic-release
+      script: skip
+      deploy:
+        skip_cleanup: true
+        provider: script
+        script: yarn semantic-release

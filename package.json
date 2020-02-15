@@ -1,6 +1,6 @@
 {
   "name": "cnbuilder",
-  "version": "1.1.7",
+  "version": "0.0.0-development",
   "main": "dist/cnbuilder.js",
   "module": "dist/cnbuilder.esm.js",
   "esnext": "dist/cnbuilder.next.esm.js",
@@ -41,7 +41,8 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "terser": "^4.6.3",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "semantic-release": "^17.0.3"
   },
   "scripts": {
     "push-codacy-coverage": "cat ./coverage/lcov.info | codacy-coverage",
@@ -51,7 +52,8 @@
     "test": "jest",
     "preversion": "npm run format && npm run build",
     "postversion": "git push && git push --tags",
-    "prepublishOnly": "npm run format && npm run test && npm run build"
+    "prepublishOnly": "npm run format && npm run test && npm run build",
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -75,5 +77,25 @@
   },
   "prettier": {
     "printWidth": 120
+  },
+  "release": {
+    "branches": [
+      "master",
+      {
+        "name": "next",
+        "prerelease": "rc"
+      }
+    ],
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   }
 }
