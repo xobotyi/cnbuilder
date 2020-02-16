@@ -41,9 +41,9 @@ clsx@*:
   integrity sha512-3avwM37fSK5oP6M5rQ9CNe99lwxhXDOeSWVPAOYF6OazUTgZCMb0yWlJpmdD74REy1gkEaFiub2ULv4fq9GUhA==
 
 cnbuilder@*:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/cnbuilder/-/cnbuilder-1.1.7.tgz#04ef08d278efd69bc65a95b087328455a85a2eef"
-  integrity sha512-8D9dpabOVOh7GX/qPZ60sJpqxHaiLqSDsuZOYH1TvoNkgMrO7BJHCbNepHHoglSdU//M2sjLHaL9Vu0qibSV2A==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/cnbuilder/-/cnbuilder-1.2.1.tgz#69a2db013c77d039261fff061f37eb054ff034b7"
+  integrity sha512-eUXYaCSd4Kdgm7SlE+Q0E1Mhdqsv0szVNa9rl4ntQ+1j43Mm4MTIeOw9qb6K6t01WCW8rvslpdVsphLrq5y3kA==
 
 lodash@^4.17.4:
   version "4.17.15"
