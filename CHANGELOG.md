@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/xobotyi/cnbuilder/compare/v1.2.0...v1.2.1) (2020-02-16)
+
+
+### Bug Fixes
+
+* **travis:** fix travis jobs; ([31382fb](https://github.com/xobotyi/cnbuilder/commit/31382fb2953d44facaa099fb30c671af15f86779))
+
 # [1.2.0](https://github.com/xobotyi/cnbuilder/compare/v1.1.7...v1.2.0) (2020-02-16)
 
 
