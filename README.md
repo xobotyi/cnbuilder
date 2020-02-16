@@ -51,6 +51,8 @@ Depending on your targets you may have to use [Webpack](https://webpack.js.org/)
 [Babel](http://babeljs.io/) to pull untranspiled version of package.  
 See some tips on wiring thing up: [https://2ality.com/2017/06/pkg-esnext.html](https://2ality.com/2017/06/pkg-esnext.html)
 
+Use it wherever and however you want - node.js or webpack, CJS or ESM modules!
+
 ```javascript
 var cnb = require("cnbuilder");
 
