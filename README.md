@@ -74,7 +74,7 @@ It is written with power of [TypeScript](http://www.typescriptlang.org) and it's
 
 As already said - API is the same with `classnames` pkg, and due to my laziness - i'll just copy-past their usage documentation (with small additions)😅😱
 
-The `classNames` function takes any number of arguments which can be a string, array or object.
+The `cnb` function takes any number of arguments which can be a string, array or object. Any other input will be ignored.
 The argument `'foo'` is short for `{ foo: true }` or `['foo']`. If the value associated with a given key is falsy, that key won't be included in the output.
 
 ```js
@@ -103,7 +103,7 @@ cnb("a", arr); // => 'a b c'
 
 - it does not generate useless spaces:
   ```javascript
-  classnames("test", [], { a: false }); // => "test " (4 chars with space at the end)
+  classnames("test", [], { a: false }); // => "test " (5 chars with space at the end)
   cnb("test", [], { a: false }); // => "test" (just 4 chars)
   ```
 - it skips fully numeric classnames, due to classnames starting with digit are illegal, but it **can't** skip strings starting with digit, cause it would impact the performance, so that part is left for the end developer
@@ -124,7 +124,6 @@ cnb({ [`btn-${buttonType}`]: true });
 ### Polyfills needed to support older browsers
 
 `Array.isArray`: see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray) for details about unsupported older browsers (e.g. <= IE8) and a simple polyfill.
-`Array.reduce`: see [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) for details about unsupported older browsers (e.g. <= IE10) and a simple polyfill.
 
 ### Performance (recent benchmarks results)
 
