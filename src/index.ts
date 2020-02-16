@@ -1,48 +1,67 @@
 export type ClassValue = string | null | boolean | undefined | ClassListDictionary | ClassListArray;
 
+export type ClassListArray = ClassValue[];
+
 export interface ClassListDictionary {
   [cn: string]: boolean | undefined | null;
 }
 
-export interface ClassListArray extends Array<ClassValue> {}
+const { isArray } = Array;
 
-const hasOwnProperty = Object.prototype.hasOwnProperty;
-const isArray = Array.isArray;
+const toVal = (val: ClassValue): string => {
+  if (!val) return '';
+
+  if (typeof val === 'string') return val;
+
+  if (typeof val !== 'object') return '';
+
+  let str = '';
+  let tmp;
+  let l;
+
+  if (isArray(val)) {
+    l = val.length;
+
+    if (l === 0) return '';
+
+    if (l === 1) return toVal(val[0]);
+
+    let i = 0;
+
+    while (i < l) {
+      tmp = toVal(val[i++]);
+
+      if (tmp) str += (str && ' ') + tmp;
+    }
+
+    return str;
+  }
+
+  for (tmp in val) {
+    if (val[tmp] && tmp) {
+      str += (str && ' ') + tmp;
+    }
+  }
+
+  return str;
+};
 
 export default function cnb(...args: ClassListArray): string;
 export default function cnb(): string {
-  const len = arguments.length;
+  const l = arguments.length;
 
-  if (!len) return "";
+  if (l === 0) return '';
 
-  let str = "",
-    item,
-    i,
-    n;
+  if (l === 1) return toVal(arguments[0]);
 
-  for (i = 0; i < len; i++) {
-    if (!(item = arguments[i])) continue;
+  let i = 0;
+  let str = '';
+  let tmp;
 
-    if (typeof item === "string") {
-      str && (str += " "), (str += item);
-      continue;
-    }
+  while (i < l) {
+    tmp = toVal(arguments[i++]);
 
-    if (typeof item !== "object") continue;
-
-    if (item.push && isArray(item)) {
-      if ((item = cnb.apply(this, item))) {
-        str && (str += " "), (str += item);
-      }
-
-      continue;
-    }
-
-    for (n in item) {
-      if (hasOwnProperty.call(item, n) && item[n] && n) {
-        str && (str += " "), (str += n);
-      }
-    }
+    if (tmp) str += (str && ' ') + tmp;
   }
 
   return str;
