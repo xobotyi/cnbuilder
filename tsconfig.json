@@ -3,8 +3,9 @@
   "compilerOptions": {
     "sourceMap": false,
     "resolveJsonModule": false,
-    "target": "ESNext",
-    "module": "ESNext"
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node"
   },
   "include": [
     "./src/**/*.ts"

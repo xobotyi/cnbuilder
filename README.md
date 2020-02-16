@@ -1,18 +1,33 @@
 <div align="center">
   <h1>cnbuilder</h1>
+  <p>Yet another classname string builder (the fastest one)</p>
   <p>
-      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/badge/npm-cnbuilder-brightgreen.svg" /></a>
-      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/npm/v/cnbuilder.svg" /></a>
-      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/npm/dt/cnbuilder.svg" /></a>
-      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/travis/xobotyi/cnbuilder.svg" /></a>
-      <a href="https://www.codacy.com/app/xobotyi/cnbuilder"><img src="https://api.codacy.com/project/badge/Grade/71cdf9626f264970a23706c93b83a4bb"/></a>
-      <a href="https://www.codacy.com/app/xobotyi/cnbuilder"><img src="https://api.codacy.com/project/badge/Coverage/71cdf9626f264970a23706c93b83a4bb"/></a>
-      <a href="https://www.npmjs.com/package/cnbuilder"><img src="https://img.shields.io/npm/l/cnbuilder.svg" /></a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/travis/xobotyi/scrollbar-width" alt="Build status"/>
+    </a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/npm/v/cnbuilder" alt="NPM version"/>
+    </a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/npm/dw/cnbuilder" alt="NPM weekly downloads"/>
+    </a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/npm/license/cnbuilder" alt="License"/>
+    </a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/npm/types/cnbuilder" alt="Types definition"/>
+    </a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/codacy/grade/71cdf9626f264970a23706c93b83a4bb" alt="Codacy Code Grade"/>
+    </a>
+    <a href="https://www.npmjs.com/package/cnbuilder">
+        <img src="https://flat.badgen.net/codacy/coverage/71cdf9626f264970a23706c93b83a4bb" alt="Tests LOC"/>
+    </a>
   </p>
 </div>
 
 One more DOM classname string builder if you not enough yet 😁  
-It is **[lightweight](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has **no dependencies**!  
+It is **[lightweight](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has no dependencies!  
 Designed to be fastest full-feature drop-in replacement for `classnames` package.
 
 Install it via [npm](https://www.npmjs.com) or [yarn](https://yarnpkg.com)
@@ -22,6 +37,8 @@ npm i cnbuilder
 # OR
 yarn add cnbuilder
 ```
+
+Use it wherever and however you want - node.js or webpack, CJS or ESM modules!
 
 **INSTALLATION NOTE:**  
 This lib is written in ES6+ and delivering with both, transpiled and untranspiled versions:
@@ -33,8 +50,6 @@ This lib is written in ES6+ and delivering with both, transpiled and untranspile
 Depending on your targets you may have to use [Webpack](https://webpack.js.org/) and/or
 [Babel](http://babeljs.io/) to pull untranspiled version of package.  
 See some tips on wiring thing up: [https://2ality.com/2017/06/pkg-esnext.html](https://2ality.com/2017/06/pkg-esnext.html)
-
-Use it wherever and however you want - node.js or webpack, CJS or ESM modules!
 
 ```javascript
 var cnb = require("cnbuilder");
