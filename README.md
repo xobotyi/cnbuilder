@@ -72,7 +72,7 @@ It is written with power of [TypeScript](http://www.typescriptlang.org) and it's
 
 ### Usage
 
-As already said - API is the same with `classnames` pkg, and due to my laziness - i'll just copy-past their usage documentation (width small additions)😅😱
+As already said - API is the same with `classnames` pkg, and due to my laziness - i'll just copy-past their usage documentation (with small additions)😅😱
 
 The `classNames` function takes any number of arguments which can be a string, array or object.
 The argument `'foo'` is short for `{ foo: true }` or `['foo']`. If the value associated with a given key is falsy, that key won't be included in the output.
