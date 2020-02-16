@@ -26,6 +26,12 @@
   </p>
 </div>
 
+---
+
+<div align="center">❤️Please consider starring this project to show your love and support.🙌</div>
+
+---
+
 One more DOM classname string builder if you not enough yet 😁  
 It is **[lightweight](https://bundlephobia.com/result?p=cnbuilder)**, **[fast](#performance-recent-benchmarks-results)** and has no dependencies!  
 Designed to be fastest full-feature drop-in replacement for `classnames` package.
@@ -176,3 +182,10 @@ classcat x 1,550,198 ops/sec ±0.38% (94 runs sampled)
 classnames x 1,032,770 ops/sec ±0.50% (91 runs sampled)
 clsx x 1,732,645 ops/sec ±0.75% (92 runs sampled)
 </pre>
+
+## Related projects
+
+- [react-scrollbars-custom](https://www.npmjs.com/package/react-scrollbars-custom) &mdash; The best React custom scrollbars component. Allows you to customise scrollbars as you like it, crossbrowser!
+- [zoom-level](https://www.npmjs.com/package/zoom-level) &mdash; A comprehensive cross-browser package that allow you to determine page's and element's zoom level.
+- [@xobotyi/scrollbar-width](https://www.npmjs.com/package/@xobotyi/scrollbar-width) &mdash; A tool to get browser's scrollbars width.
+- [@xobotyi/should-reverse-rtl-scroll](https://www.npmjs.com/package/@xobotyi/should-reverse-rtl-scroll) &mdash; A tool detecting if RTL scroll value should be negative.
