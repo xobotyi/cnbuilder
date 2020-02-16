@@ -2,13 +2,14 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames,classcat,clsx && node dist/index.js"
+    "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames,classcat,clsx,cnbuilder && node dist/index.js"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
-    "classcat": "^4.0.2",
-    "classnames": "^2.2.6",
-    "clsx": "^1.1.0",
-    "cnbuilder": "^1.1.7"
+    "classcat": "*",
+    "classnames": "*",
+    "clsx": "*",
+    "cnbuilder": "*",
+    "rollup": "^1.31.1"
   }
 }
