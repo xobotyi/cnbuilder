@@ -68,7 +68,7 @@ cnb("works", { with: true }, ["ESM!"]); // => 'works with ESM!'
 ### Why
 
 `cnbuilder` is designed to be as lightweight and fast as possible, without loosing the functionality ([jorgebucaran/classcat](https://github.com/jorgebucaran/classcat) is faster in some cases but less handy because does not allow to pass variable count of arguments).
-It is written with power of [TypeScript](http://www.typescriptlang.org) and it's API is fully compatible with [JedWatson/classnames](https://github.com/JedWatson/classnames), so it wont be anyhow hard to migrate for you if you're already using `classnames` package.
+It is written with power of [TypeScript](http://www.typescriptlang.org) and it's API is fully compatible with [JedWatson/classnames](https://github.com/JedWatson/classnames), so it wont be anyhow hard to migrate if you're already using `classnames` package.
 
 ### Usage
 
