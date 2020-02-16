@@ -130,49 +130,49 @@ cnb({ [`btn-${buttonType}`]: true });
 benchmarks ran on 3.4GHz Core i7 CPU width 16GB DDR4 RAM
 
 ```bash
-npm run build && npm i -C benchmark && npm -C benchmark start
+yarn && yarn build && cd ./benchmark && yarn && yarn start
 ```
 
 <pre>
-# STRINGS
-classcat    × 7,817,007 ops/sec;
-classnames  × 3,039,813 ops/sec;
-clsx        × 8,455,870 ops/sec;
-<string><em>cnbuilder   × 9,001,686 ops/sec;</em></string>
+# strings
+<string><em>cnbuilder x 9,269,882 ops/sec ±0.40% (96 runs sampled)</em></string>
+classcat x 8,420,286 ops/sec ±1.17% (95 runs sampled)
+classnames x 2,981,605 ops/sec ±0.39% (93 runs sampled)
+clsx x 7,922,417 ops/sec ±0.25% (93 runs sampled)
 
-# OBJECTS
-classcat    × 6,783,071 ops/sec;
-classnames  × 2,623,124 ops/sec;
-clsx        × 5,247,541 ops/sec;
-<string><em>cnbuilder   × 7,197,917 ops/sec;</em></string>
+# objects
+cnbuilder x 7,270,064 ops/sec ±0.65% (95 runs sampled)
+<string><em>classcat x 7,484,998 ops/sec ±0.70% (95 runs sampled)</em></string>
+classnames x 2,731,604 ops/sec ±0.45% (95 runs sampled)
+clsx x 5,370,626 ops/sec ±0.44% (96 runs sampled)
 
-# ARRAYS
-<string><em>classcat    × 6,189,615 ops/sec;</em></string>
-classnames  × 1,222,725 ops/sec;
-clsx        × 5,512,391 ops/sec;
-cnbuilder   × 5,839,618 ops/sec;
+# arrays
+<string><em>cnbuilder x 7,092,002 ops/sec ±0.42% (94 runs sampled)</em></string>
+classcat x 6,818,053 ops/sec ±0.29% (92 runs sampled)
+classnames x 1,676,201 ops/sec ±0.27% (96 runs sampled)
+clsx x 6,083,849 ops/sec ±0.22% (94 runs sampled)
 
-# NESTED ARRAYS
-classcat    × 1,433,007 ops/sec;
-classnames  × 821,668 ops/sec;
-<string><em>clsx        × 4,064,528 ops/sec;</em></string>
-cnbuilder   × 3,653,864 ops/sec;
+# nested arrays
+<string><em>cnbuilder x 5,828,441 ops/sec ±0.39% (96 runs sampled)</em></string>
+classcat x 5,609,506 ops/sec ±0.25% (96 runs sampled)
+classnames x 1,076,019 ops/sec ±0.45% (91 runs sampled)
+clsx x 4,910,528 ops/sec ±0.19% (96 runs sampled)
 
-# OBJECTS NESTED IN ARRAYS
-<string><em>classcat    × 4,745,927 ops/sec;</em></string>
-classnames  × 1,124,121 ops/sec;
-clsx        × 3,393,440 ops/sec;
-cnbuilder   × 3,894,376 ops/sec;
+# objects nested in arrays
+cnbuilder x 5,652,700 ops/sec ±0.83% (95 runs sampled)
+<string><em>classcat x 5,756,021 ops/sec ±0.73% (96 runs sampled)</em></string>
+classnames x 1,599,139 ops/sec ±0.27% (95 runs sampled)
+clsx x 4,677,370 ops/sec ±0.57% (95 runs sampled)
 
-# MIXED
-<string><em>classcat    × 5,226,767 ops/sec;</em></string>
-classnames  × 1,569,844 ops/sec;
-clsx        × 3,857,523 ops/sec;
-cnbuilder   × 4,430,334 ops/sec;
+# mixed
+cnbuilder x 6,000,100 ops/sec ±0.74% (94 runs sampled)
+<string><em>classcat x 6,028,224 ops/sec ±0.31% (94 runs sampled)</em></string>
+classnames x 1,971,724 ops/sec ±0.30% (93 runs sampled)
+clsx x 4,922,858 ops/sec ±0.35% (94 runs sampled)
 
-# MIXED WITH WRONG DATA
-classcat    × 682,359 ops/sec;
-classnames  × 737,083 ops/sec;
-<string><em>clsx        × 1,107,078 ops/sec;</em></string>
-cnbuilder   × 1,087,857 ops/sec;
+# mixed with wrong data
+<string><em>cnbuilder x 1,915,258 ops/sec ±0.71% (95 runs sampled)</em></string>
+classcat x 1,550,198 ops/sec ±0.38% (94 runs sampled)
+classnames x 1,032,770 ops/sec ±0.50% (91 runs sampled)
+clsx x 1,732,645 ops/sec ±0.75% (92 runs sampled)
 </pre>
