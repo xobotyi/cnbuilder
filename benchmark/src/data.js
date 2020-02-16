@@ -1,0 +1,49 @@
+export default [
+  {
+    name: 'strings',
+    data: ['foo', '', 'bar', 'baz', 'bax', 'bux'],
+  },
+  {
+    name: 'objects',
+    data: [
+      { foo: true, bar: true, bax: true, bux: false },
+      { baz: true, bax: false, bux: true },
+    ],
+  },
+  {
+    name: 'arrays',
+    data: [
+      ['foo', 'bar'],
+      ['baz', 'bax', 'bux'],
+    ],
+  },
+  {
+    name: 'nested arrays',
+    data: [
+      ['foo', ['bar']],
+      ['baz', ['bax', ['bux']]],
+    ],
+  },
+  {
+    name: 'objects nested in arrays',
+    data: [
+      ['foo', { bar: true, bax: true, bux: false }],
+      ['bax', { bax: false, bux: true }],
+    ],
+  },
+  {
+    name: 'mixed',
+    data: ['foo', 'bar', { bax: true, bux: false }, ['baz', { bax: false, bux: true }]],
+  },
+  {
+    name: 'mixed with wrong data',
+    data: [
+      'foo',
+      'bar',
+      undefined,
+      () => {},
+      { bax: true, bux: false, 123: true },
+      ['baz', { bax: false, bux: true, abc: null }, {}],
+    ],
+  },
+];

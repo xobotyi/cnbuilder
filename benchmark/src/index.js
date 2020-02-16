@@ -1,151 +1,36 @@
-import { Suite } from "benchmark";
-import classcat from "classcat";
-import classnames from "classnames";
-import clsx from "clsx";
-import npmCnb from "cnbuilder";
-const cnb = require("../../dist/cnbuilder");
+import { Suite } from 'benchmark';
 
-console.log(`\n# STRINGS`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () => cnb("foo", "", "bar", "baz", "bax", "bux"))
-  .add("cnbuilder[npm]", () => npmCnb("foo", "", "bar", "baz", "bax", "bux"))
-  .add("classcat   ", () => classcat(["foo", "", "bar", "baz", "bax", "bux"]))
-  .add("classnames ", () => classnames("foo", "", "bar", "baz", "bax", "bux"))
-  .add("clsx       ", () => clsx("foo", "", "bar", "baz", "bax", "bux"))
-  .run();
+import cnbNPM from 'cnbuilder';
+import classcat from 'classcat';
+import classnames from 'classnames';
+import clsx from 'clsx';
+import cnbLocalESNext from '../../dist/cnbuilder.next.esm';
+import testData from './data';
 
-console.log(`\n# OBJECTS`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () => cnb({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true }))
-  .add("cnbuilder[npm]", () =>
-    npmCnb({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true })
-  )
-  .add("classcat   ", () =>
-    classcat([
-      { foo: true, bar: true, bax: true, bux: false },
-      { baz: true, bax: false, bux: true }
-    ])
-  )
-  .add("classnames ", () =>
-    classnames({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true })
-  )
-  .add("clsx       ", () => clsx({ foo: true, bar: true, bax: true, bux: false }, { baz: true, bax: false, bux: true }))
-  .run();
+const cnbLocalES3 = require('../../dist/cnbuilder');
 
-console.log(`\n# ARRAYS`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () => cnb(["foo", "bar"], ["baz", "bax", "bux"]))
-  .add("cnbuilder[npm]", () => npmCnb(["foo", "bar"], ["baz", "bax", "bux"]))
-  .add("classcat   ", () =>
-    classcat([
-      ["foo", "bar"],
-      ["baz", "bax", "bux"]
-    ])
-  )
-  .add("classnames ", () => classnames(["foo", "bar"], ["baz", "bax", "bux"]))
-  .add("clsx       ", () => clsx(["foo", "bar"], ["baz", "bax", "bux"]))
-  .run();
+const libs = {
+  'cnbuilder (local es3)': args => cnbLocalES3.call(null, args),
+  'cnbuilder (local esnext)': args => cnbLocalESNext.call(null, args),
+  'cnbuilder (npm)': args => cnbNPM.call(null, args),
+  classcat: args => classcat(args),
+  classnames: args => classnames.call(null, args),
+  clsx: args => clsx.call(null, args),
+};
 
-console.log(`\n# NESTED ARRAYS`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () => cnb(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
-  .add("cnbuilder[npm]", () => npmCnb(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
-  .add("classcat   ", () =>
-    classcat([
-      ["foo", ["bar"]],
-      ["baz", ["bax", ["bux"]]]
-    ])
-  )
-  .add("classnames ", () => classnames(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
-  .add("clsx       ", () => clsx(["foo", ["bar"]], ["baz", ["bax", ["bux"]]]))
-  .run();
+testData.forEach(test => {
+  const suite = new Suite(test.name, {
+    onStart: () => {
+      console.log(`\n# ${test.name}`);
+    },
+    onCycle: ev => {
+      console.log(String(ev.target));
+    },
+  });
 
-console.log(`\n# OBJECTS NESTED IN ARRAYS`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () => cnb(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }]))
-  .add("cnbuilder[npm]", () =>
-    npmCnb(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }])
-  )
-  .add("classcat   ", () =>
-    classcat([
-      ["foo", { bar: true, bax: true, bux: false }],
-      ["bax", { bax: false, bux: true }]
-    ])
-  )
-  .add("classnames ", () =>
-    classnames(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }])
-  )
-  .add("clsx       ", () => clsx(["foo", { bar: true, bax: true, bux: false }], ["bax", { bax: false, bux: true }]))
-  .run();
+  Object.entries(libs).forEach(([name, fn]) => {
+    suite.add(name, () => fn(test.data));
+  });
 
-console.log(`\n# MIXED`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () => cnb("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
-  .add("cnbuilder[npm]", () => npmCnb("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
-  .add("classcat   ", () => classcat(["foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]]))
-  .add("classnames ", () => classnames("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
-  .add("clsx       ", () => clsx("foo", "bar", { bax: true, bux: false }, ["baz", { bax: false, bux: true }]))
-  .run();
-
-console.log(`\n# MIXED WITH WRONG DATA`);
-new Suite()
-  .on("cycle", ({ target: { name, hz, fn } }) =>
-    console.log(`${name} × ${Math.floor(hz).toLocaleString()} ops/sec; (result: "${fn()}")`)
-  )
-  .add("cnbuilder  ", () =>
-    cnb("foo", "bar", undefined, () => {}, { bax: true, bux: false, 123: true }, [
-      "baz",
-      { bax: false, bux: true, abc: null },
-      {}
-    ])
-  )
-  .add("cnbuilder[npm]", () =>
-    npmCnb("foo", "bar", undefined, () => {}, { bax: true, bux: false, 123: true }, [
-      "baz",
-      { bax: false, bux: true, abc: null },
-      {}
-    ])
-  )
-  .add("classcat   ", () =>
-    classcat([
-      "foo",
-      "bar",
-      undefined,
-      () => {},
-      { bax: true, bux: false, 123: true },
-      ["baz", { bax: false, bux: true, abc: null }, {}]
-    ])
-  )
-  .add("classnames ", () =>
-    classnames("foo", "bar", undefined, () => {}, { bax: true, bux: false, 123: true }, [
-      "baz",
-      { bax: false, bux: true, abc: null },
-      {}
-    ])
-  )
-  .add("clsx       ", () =>
-    clsx("foo", "bar", undefined, () => {}, { bax: true, bux: false, 123: true }, [
-      "baz",
-      { bax: false, bux: true, abc: null },
-      {}
-    ])
-  )
-  .run();
+  suite.run();
+});

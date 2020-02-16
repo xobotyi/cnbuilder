@@ -3,5 +3,15 @@
   "extends": [
     "@xobotyi/eslint-config/base",
     "@xobotyi/eslint-config/typescript"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "./benchmark/**/*"
+      ],
+      "rules": {
+        "no-console": "off"
+      }
+    }
   ]
 }
