@@ -5,6 +5,15 @@ describe('cnb', () => {
     expect(cnb).toBeDefined();
   });
 
+  it('should not include falsy entries', () => {
+    expect(cnb('')).toBe('');
+    expect(cnb([''])).toBe('');
+    expect(cnb('a', 'b', 'c', '')).toBe('a b c');
+    expect(cnb(['a'], ['b', 'c'], [''])).toBe('a b c');
+    expect(cnb({ a: true }, { b: true, c: true }, { '': true })).toBe('a b c');
+    expect(cnb({ a: true, d: false }, { b: true, c: true }, { '': true })).toBe('a b c');
+  });
+
   it('should return empty string if called w/o arguments', () => {
     expect(cnb()).toBe('');
   });
@@ -24,15 +33,6 @@ describe('cnb', () => {
     expect(cnb({ '': true })).toBe('');
     expect(cnb({ a: true })).toBe('a');
     expect(cnb({ a: true, b: true }, { c: true })).toBe('a b c');
-  });
-
-  it('should not include falsy entries', () => {
-    expect(cnb('')).toBe('');
-    expect(cnb([''])).toBe('');
-    expect(cnb('a', 'b', 'c', '')).toBe('a b c');
-    expect(cnb(['a'], ['b', 'c'], [''])).toBe('a b c');
-    expect(cnb({ a: true }, { b: true, c: true }, { '': true })).toBe('a b c');
-    expect(cnb({ a: true, d: false }, { b: true, c: true }, { '': true })).toBe('a b c');
   });
 
   it('should ignore invalid entries', () => {

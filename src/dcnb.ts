@@ -4,9 +4,10 @@ const SPACE_REGEX = /\s+/;
 const { create } = Object;
 const { isArray } = Array;
 
+/* istanbul ignore next */
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 function Storage(): void {}
-
+/* istanbul ignore next */
 Storage.prototype = create(null);
 
 function addVal(val: ClassValue, storage: object): void {
@@ -50,7 +51,7 @@ export default function dcnb(): string {
   let str = '';
 
   let i;
-  for (i in storage) if (storage[i]) str += (str && ' ') + i;
+  for (i in storage) if (storage[i] && i) str += (str && ' ') + i;
 
   return str;
 }
