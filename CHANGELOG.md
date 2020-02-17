@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/xobotyi/cnbuilder/compare/v2.1.0...v2.2.0) (2020-02-17)
+
+
+### Features
+
+* add prepublish build script so dist dir never lost; ([23538b4](https://github.com/xobotyi/cnbuilder/commit/23538b4db4a8fc4d6297a8f94c9e01d4170a64a9))
+
 # [2.1.0](https://github.com/xobotyi/cnbuilder/compare/v2.0.0...v2.1.0) (2020-02-17)
 
 
