@@ -1,59 +1,44 @@
-import cnb from '../src/cnb';
+import { cnb } from '../src';
 
-describe('cnbuilder (common version)', () => {
-  it('should build from strings', () => {
-    expect(cnb('foo', 'bar', 'baz')).toBe('foo bar baz');
+describe('cnb', () => {
+  it('should be defined', () => {
+    expect(cnb).toBeDefined();
   });
 
-  it('should build from array', () => {
-    expect(cnb(['foo', 'bar', 'baz'])).toBe('foo bar baz');
-  });
-
-  it('should build from nested arrays', () => {
-    expect(cnb(['foo', ['bar', 'baz']])).toBe('foo bar baz');
-  });
-
-  it('should build from objects', () => {
-    expect(
-      cnb({
-        foo: true,
-        bar: true,
-        baz: true,
-        bax: false,
-      }),
-    ).toBe('foo bar baz');
-  });
-
-  it('should build from mixed args', () => {
-    expect(cnb('foo', ['bar', { baz: true, bux: false }], { bax: true, abc: false })).toBe('foo bar baz bax');
-  });
-
-  it('should ignore wrong args', () => {
-    expect(
-      cnb(
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        'foo',
-        ['bar', { baz: true, bux: false }],
-        {
-          bax: true,
-          abc: false,
-        },
-        false,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        123,
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        () => {},
-      ),
-    ).toBe('foo bar baz bax');
-  });
-
-  it('should return empty string on empty call', () => {
+  it('should return empty string if called w/o arguments', () => {
     expect(cnb()).toBe('');
   });
 
-  it('should ignore empty strings, empty arrays, empty build results (not add extra spaces)', () => {
-    expect(cnb([''], 'foo', { '': true }, 'bar', '', 'baz', [])).toBe('foo bar baz');
+  it('should build from various amount of strings', () => {
+    expect(cnb('a')).toBe('a');
+    expect(cnb('a', 'b', 'c')).toBe('a b c');
+  });
+
+  it('should build from various amount of arrays', () => {
+    expect(cnb([])).toBe('');
+    expect(cnb(['a'])).toBe('a');
+    expect(cnb(['a', 'b'], ['c'])).toBe('a b c');
+  });
+
+  it('should build from various amount of objects', () => {
+    expect(cnb({ '': true })).toBe('');
+    expect(cnb({ a: true })).toBe('a');
+    expect(cnb({ a: true, b: true }, { c: true })).toBe('a b c');
+  });
+
+  it('should not include falsy entries', () => {
+    expect(cnb('')).toBe('');
+    expect(cnb([''])).toBe('');
+    expect(cnb('a', 'b', 'c', '')).toBe('a b c');
+    expect(cnb(['a'], ['b', 'c'], [''])).toBe('a b c');
+    expect(cnb({ a: true }, { b: true, c: true }, { '': true })).toBe('a b c');
+    expect(cnb({ a: true, d: false }, { b: true, c: true }, { '': true })).toBe('a b c');
+  });
+
+  it('should ignore invalid entries', () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    expect(cnb(NaN, undefined, null, 123, () => {}, [null, NaN])).toBe('');
   });
 });

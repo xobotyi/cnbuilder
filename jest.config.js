@@ -4,4 +4,11 @@ module.exports = {
   coverageDirectory: './coverage',
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts'],
+  globals: {
+    'ts-jest': {
+      diagnostics: {
+        ignoreCodes: [151001],
+      },
+    },
+  },
 };
