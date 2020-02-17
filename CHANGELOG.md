@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/xobotyi/cnbuilder/compare/v1.2.1...v2.0.0) (2020-02-17)
+
+
+### Features
+
+* added dedupe module version; ([1c61c3f](https://github.com/xobotyi/cnbuilder/commit/1c61c3fd2567d8586e22e46f02c6cc8050f8dcb5))
+
+
+### BREAKING CHANGES
+
+* now package have named exports `cnb` and `dcnb` from the index;
+
 ## [1.2.1](https://github.com/xobotyi/cnbuilder/compare/v1.2.0...v1.2.1) (2020-02-16)
 
 
