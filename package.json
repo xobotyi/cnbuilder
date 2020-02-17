@@ -56,6 +56,7 @@
     "lint:types": "tsc --noEmit",
     "build": "rimraf ./dist && rollup --config",
     "test": "jest",
+    "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release"
   },
   "lint-staged": {
