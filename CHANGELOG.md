@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/xobotyi/cnbuilder/compare/v2.0.0...v2.1.0) (2020-02-17)
+
+
+### Features
+
+* dcnb tests; ([fc1f1f0](https://github.com/xobotyi/cnbuilder/commit/fc1f1f08dd0ea2070fe5186545016ad917f3ed3c))
+* rewritten cnb tests; ([52355ce](https://github.com/xobotyi/cnbuilder/commit/52355ce51dcc59ec8bfe1da055fbf1910144c1b1))
+
 # [2.0.0](https://github.com/xobotyi/cnbuilder/compare/v1.2.1...v2.0.0) (2020-02-17)
 
 
