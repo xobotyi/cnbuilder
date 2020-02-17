@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/xobotyi/cnbuilder/compare/v1.2.1...v1.3.0) (2020-02-17)
+
+
+### Features
+
+* added dedupe module version; ([50df385](https://github.com/xobotyi/cnbuilder/commit/50df3857bb392e945c6ca2e74a4b356d6a51a008))
+
 ## [1.2.1](https://github.com/xobotyi/cnbuilder/compare/v1.2.0...v1.2.1) (2020-02-16)
 
 
