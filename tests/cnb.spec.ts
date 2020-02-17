@@ -1,6 +1,6 @@
-import cnb from '../src/index';
+import cnb from '../src/cnb';
 
-describe('cnbuilder', () => {
+describe('cnbuilder (common version)', () => {
   it('should build from strings', () => {
     expect(cnb('foo', 'bar', 'baz')).toBe('foo bar baz');
   });

@@ -2,9 +2,9 @@
   "name": "cnbuilder",
   "description": "Yet another classname string builder (the fastest one)",
   "version": "1.2.1",
-  "main": "dist/cnbuilder.js",
-  "module": "dist/cnbuilder.esm.js",
-  "esnext": "dist/cnbuilder.next.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "esnext": "dist/index.esnext.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -60,11 +60,11 @@
   },
   "lint-staged": {
     "./{src,tests}/**/*.ts": [
-      "tslint --fix -t verbose",
+      "yarn lint:fix",
       "git add"
     ],
     "./*.{ts,js}": [
-      "tslint --fix -t verbose",
+      "yarn lint:fix",
       "git add"
     ]
   },

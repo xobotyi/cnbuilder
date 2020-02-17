@@ -1,4 +1,18 @@
-export default [
+const classnames = require('classnames');
+const classcat = require('classcat');
+const clsx = require('clsx');
+const cnbuilderNpm = require('cnbuilder');
+const cnbuilderLocal = require('../../dist').cnb;
+
+const libraries = {
+  classnames: args => classnames.apply(classnames, args),
+  classcat: args => classcat.call(classcat, args),
+  clsx: args => clsx.apply(clsx, args),
+  'cnbuilder (local)': args => cnbuilderLocal.apply(cnbuilderLocal, args),
+  'cnbuilder (npm)': args => cnbuilderNpm.apply(cnbuilderNpm, args),
+};
+
+const testData = [
   {
     name: 'strings',
     data: ['foo', '', 'bar', 'baz', 'bax', 'bux'],
@@ -47,3 +61,5 @@ export default [
     ],
   },
 ];
+
+require('./run')(testData, libraries);
