@@ -2,14 +2,14 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "start": "rollup -i src/index.js -o dist/index.js -f cjs -g benchmark,classnames,classcat,clsx,cnbuilder && node dist/index.js"
+    "bench:common": "node ./src/common.js",
+    "bench:dedupe": "node ./src/dedupe.js"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
     "classcat": "*",
     "classnames": "*",
     "clsx": "*",
-    "cnbuilder": "*",
-    "rollup": "^1.31.1"
+    "cnbuilder": "*"
   }
 }
