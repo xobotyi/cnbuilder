@@ -2,7 +2,7 @@
   <h1>cnbuilder</h1>
   <p>Yet another classname string builder (the fastest one)</p>
   <p>
-    <a href="https://www.npmjs.com/package/cnbuilder">
+    <a href="https://travis-ci.org/xobotyi/cnbuilder">
         <img src="https://flat.badgen.net/travis/xobotyi/scrollbar-width" alt="Build status"/>
     </a>
     <a href="https://www.npmjs.com/package/cnbuilder">
@@ -17,10 +17,10 @@
     <a href="https://www.npmjs.com/package/cnbuilder">
         <img src="https://flat.badgen.net/npm/types/cnbuilder" alt="Types definition"/>
     </a>
-    <a href="https://www.npmjs.com/package/cnbuilder">
+    <a href="https://www.codacy.com/manual/xobotyi/cnbuilder">
         <img src="https://flat.badgen.net/codacy/grade/71cdf9626f264970a23706c93b83a4bb" alt="Codacy Code Grade"/>
     </a>
-    <a href="https://www.npmjs.com/package/cnbuilder">
+    <a href="https://www.codacy.com/manual/xobotyi/cnbuilder">
         <img src="https://flat.badgen.net/codacy/coverage/71cdf9626f264970a23706c93b83a4bb" alt="Tests LOC"/>
     </a>
   </p>
