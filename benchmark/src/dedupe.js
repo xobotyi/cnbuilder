@@ -1,9 +1,11 @@
 const classnames = require('classnames/dedupe');
-const { dcnb } = require('../../dist');
+const cnbuilderNpm = require('cnbuilder').dcnb;
+const cnbuilderLocal = require('../../dist').dcnb;
 
 const libraries = {
-  'cnbuilder (local)': args => dcnb.apply(dcnb, args),
-  classnames: args => classnames.apply(classnames, args),
+  'classnames       ': args => classnames.apply(classnames, args),
+  'cnbuilder (local)': args => cnbuilderLocal.apply(cnbuilderLocal, args),
+  'cnbuilder (npm)  ': args => cnbuilderNpm.apply(cnbuilderNpm, args),
 };
 
 const testData = [

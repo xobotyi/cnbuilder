@@ -7,7 +7,10 @@ module.exports = (testData, libraries) => {
         console.log(`\n# ${test.name}`);
       },
       onCycle: ev => {
-        console.log(String(ev.target));
+        console.log(`  ${String(ev.target)}`);
+      },
+      onComplete: ev => {
+        console.log(` Fastest is ${ev.currentTarget.filter('fastest').map('name')}`);
       },
     });
 
