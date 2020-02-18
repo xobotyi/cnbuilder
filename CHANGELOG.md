@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/xobotyi/cnbuilder/compare/v2.2.1...v2.3.0) (2020-02-18)
+
+
+### Features
+
+* **types:** object value now can be anything, cause we only need to cast it to boolean, it gives more versatile usage; ([7d1ced4](https://github.com/xobotyi/cnbuilder/commit/7d1ced48d7439972917b372c42cd223fb963428a))
+
 ## [2.2.1](https://github.com/xobotyi/cnbuilder/compare/v2.2.0...v2.2.1) (2020-02-18)
 
 
