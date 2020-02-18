@@ -3,5 +3,5 @@ export type ClassValue = string | null | boolean | undefined | ClassListDictiona
 export type ClassListArray = ClassValue[];
 
 export interface ClassListDictionary {
-  [cn: string]: boolean | undefined | null;
+  [cn: string]: any; // in can be anything
 }

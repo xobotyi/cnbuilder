@@ -32,7 +32,8 @@ describe('cnb', () => {
   it('should build from various amount of objects', () => {
     expect(cnb({ '': true })).toBe('');
     expect(cnb({ a: true })).toBe('a');
-    expect(cnb({ a: true, b: true }, { c: true })).toBe('a b c');
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    expect(cnb({ a: true, b: true }, { c: true, d: () => {} })).toBe('a b c d');
   });
 
   it('should ignore invalid entries', () => {
