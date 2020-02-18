@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/xobotyi/cnbuilder/compare/v2.2.0...v2.2.1) (2020-02-18)
+
+
+### Bug Fixes
+
+* **readme:** fix travis and codacy badges links; ([ce61eca](https://github.com/xobotyi/cnbuilder/commit/ce61ecab2d5e7efe8e2ac15c6abf42d56258d1c6))
+
 # [2.2.0](https://github.com/xobotyi/cnbuilder/compare/v2.1.0...v2.2.0) (2020-02-17)
 
 
