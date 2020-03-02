@@ -1,4 +1,4 @@
-import { cnb, dcnb } from '../src';
+import { dcnb } from '../src';
 
 describe('dcnb', () => {
   it('should be defined', () => {
@@ -32,8 +32,16 @@ describe('dcnb', () => {
   it('should build from various amount of objects', () => {
     expect(dcnb({ '': true })).toBe('');
     expect(dcnb({ a: true })).toBe('a');
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    expect(dcnb({ a: true, b: true, d: true }, { c: true, d: false }, { d: () => {} })).toBe('a b d c');
+    expect(
+      dcnb(
+        { a: true, b: true, d: true },
+        { c: true, d: false },
+        {
+          // eslint-disable-next-line @typescript-eslint/no-empty-function
+          d: () => {},
+        },
+      ),
+    ).toBe('a b d c');
   });
 
   it('should ignore invalid entries', () => {
