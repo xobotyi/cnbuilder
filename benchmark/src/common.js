@@ -1,12 +1,14 @@
 const classnames = require('classnames');
-const classcat = require('classcat');
+// const classcat = require('classcat');
+// classcat somewhy uses ES6 export for browser
 const clsx = require('clsx');
-const cnbuilderNpm = require('cnbuilder').cnb;
+const cnbuilderNpm = require('cnbuilder/dist').cnb;
 const cnbuilderLocal = require('../../dist').cnb;
+const runTests = require('./run');
 
 const libraries = {
   'classnames       ': args => classnames.apply(classnames, args),
-  'classcat         ': args => classcat.call(classcat, args),
+  // 'classcat         ': args => classcat.call(classcat, args),
   'clsx             ': args => clsx.apply(clsx, args),
   'cnbuilder (local)': args => cnbuilderLocal.apply(cnbuilderLocal, args),
   'cnbuilder (npm)  ': args => cnbuilderNpm.apply(cnbuilderNpm, args),
@@ -63,4 +65,4 @@ const testData = [
   },
 ];
 
-require('./run')(testData, libraries);
+runTests(testData, libraries);

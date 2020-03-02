@@ -3,13 +3,16 @@
   "dependencies": {},
   "scripts": {
     "bench:common": "yarn && node ./src/common.js",
-    "bench:dedupe": "yarn && node ./src/dedupe.js"
+    "bench:dedupe": "yarn && node ./src/dedupe.js",
+    "bench:common:browser": "browserify ./src/common.js -o ./browser/common.js && open-cli ./browser/index.html"
   },
   "devDependencies": {
     "benchmark": "^2.1.4",
+    "browserify": "*",
     "classcat": "*",
     "classnames": "*",
     "clsx": "*",
-    "cnbuilder": "latest"
+    "cnbuilder": "*",
+    "open-cli": "^5.0.0"
   }
 }
