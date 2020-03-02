@@ -1,7 +1,7 @@
 {
   "name": "cnbuilder",
   "description": "Yet another classname string builder (the fastest one)",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "esnext": "dist/index.esnext.js",

@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/xobotyi/cnbuilder/compare/v2.3.0...v2.4.0) (2020-03-02)
+
+
+### Bug Fixes
+
+* **lint:** rename interface to pass linting. ([d981f98](https://github.com/xobotyi/cnbuilder/commit/d981f983e985be01105563e465e7f0020047f971))
+
+
+### Features
+
+* **benchmarks:** add the common version browser benchmarks. ([aed60ac](https://github.com/xobotyi/cnbuilder/commit/aed60ac7991e62b4c1b3d46a290fced0fb03f331))
+
 # [2.3.0](https://github.com/xobotyi/cnbuilder/compare/v2.2.1...v2.3.0) (2020-02-18)
 
 
