@@ -1,16 +1,23 @@
-const { Suite } = require('benchmark');
+const benchmark = require('benchmark');
+
+const outputFn =
+  typeof document === 'undefined'
+    ? console.log
+    : text => {
+        document.body.innerHTML += `${text.replace('\n', '<br/>')}<br/>`;
+      };
 
 module.exports = (testData, libraries) => {
   testData.forEach(test => {
-    const suite = new Suite(test.name, {
+    const suite = new benchmark.Suite(test.name, {
       onStart: () => {
-        console.log(`\n# ${test.name}`);
+        outputFn(`\n# ${test.name}`);
       },
       onCycle: ev => {
-        console.log(`  ${String(ev.target)}`);
+        outputFn(`  ${String(ev.target)}`);
       },
       onComplete: ev => {
-        console.log(` Fastest is ${ev.currentTarget.filter('fastest').map('name')}`);
+        outputFn(` Fastest is ${ev.currentTarget.filter('fastest').map('name')}`);
       },
     });
 

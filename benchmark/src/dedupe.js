@@ -1,6 +1,7 @@
 const classnames = require('classnames/dedupe');
 const cnbuilderNpm = require('cnbuilder').dcnb;
 const cnbuilderLocal = require('../../dist').dcnb;
+const runTests = require('./run');
 
 const libraries = {
   'classnames       ': args => classnames.apply(classnames, args),
@@ -59,4 +60,4 @@ const testData = [
   },
 ];
 
-require('./run')(testData, libraries);
+runTests(testData, libraries);
