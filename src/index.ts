@@ -1,2 +1,2 @@
-export { default as cnb } from './cnb';
-export { default as dcnb } from './dcnb';
+export { cnb } from './cnb';
+export { dcnb } from './dcnb';

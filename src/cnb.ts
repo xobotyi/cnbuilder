@@ -40,8 +40,8 @@ const toVal = (val: ClassValue): string => {
   return str;
 };
 
-export default function cnb(...args: ClassListArray): string;
-export default function cnb(): string {
+export function cnb(...args: ClassListArray): string;
+export function cnb(): string {
   const l = arguments.length;
 
   if (l === 0) return '';
