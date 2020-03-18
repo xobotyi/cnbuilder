@@ -40,8 +40,8 @@ function addVal(val: ClassValue, storage: object): void {
   for (i in val) storage[i] = !!val[i];
 }
 
-export default function dcnb(...args: ClassListArray): string;
-export default function dcnb(): string {
+export function dcnb(...args: ClassListArray): string;
+export function dcnb(): string {
   const l = arguments.length;
 
   const storage = new Storage();

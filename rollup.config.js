@@ -4,7 +4,7 @@ import pkg from './package.json';
 
 const plugins = [terser()];
 
-export default [
+module.exports = [
   {
     input: './src/index.ts',
     output: [
