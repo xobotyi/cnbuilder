@@ -983,10 +983,10 @@ once@^1.3.0:
   dependencies:
     wrappy "1"
 
-open-cli@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/open-cli/-/open-cli-6.0.0.tgz#5fd8d29ef1802d148483bc8fb90efebc4f5a6cce"
-  integrity sha512-LRUjOqzvnuoOHpuF4gAftTXbViJ5iaVOLwOh/8pVTSLc0PusBf7axdBIJmlNcN+aYtE+k06sq5sb/l5a7sax6A==
+open-cli@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/open-cli/-/open-cli-6.0.1.tgz#adcee24967dc12c65d8cb8bf994e7dc40aed7a8e"
+  integrity sha512-A5h8MF3GrT1efn9TiO9LPajDnLtuEiGQT5G8TxWObBlgt1cZJF1YbQo/kNtsD1bJb7HxnT6SaSjzeLq0Rfhygw==
   dependencies:
     file-type "^14.1.4"
     get-stdin "^7.0.0"
