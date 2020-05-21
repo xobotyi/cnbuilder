@@ -24,7 +24,7 @@ module.exports = [
         tsconfigOverride: {
           compilerOptions: {
             module: 'esnext',
-            target: 'es3',
+            target: 'es5',
           },
         },
       }),

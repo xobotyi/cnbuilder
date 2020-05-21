@@ -49,8 +49,8 @@ Use it wherever and however you want - node.js or webpack, CJS or ESM modules!
 **INSTALLATION NOTE:**  
 This lib is written in ES6+ and delivering with both, transpiled and untranspiled versions:
 
-- `main` field of `package.json` is pointing to transpiled ES3 version with CJS modules resolution;
-- `module` field is pointing to transpiled ES3 version with ES modules resolution;
+- `main` field of `package.json` is pointing to transpiled ES5 version with CJS modules resolution;
+- `module` field is pointing to transpiled ES5 version with ES modules resolution;
 - `esnext` field is pointing to the ES6+ version with ES modules resolution;
 
 Depending on your targets you may have to use [Webpack](https://webpack.js.org/) and/or
