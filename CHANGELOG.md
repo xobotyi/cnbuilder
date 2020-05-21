@@ -1,3 +1,11 @@
+# [2.5.0](https://github.com/xobotyi/cnbuilder/compare/v2.4.0...v2.5.0) (2020-05-21)
+
+
+### Features
+
+* add patreon funding link ([5e4ebce](https://github.com/xobotyi/cnbuilder/commit/5e4ebce409b718d3593f2530bea0ffe41ae96ba8))
+* compatibility level now at ES5 ([de0b7b0](https://github.com/xobotyi/cnbuilder/commit/de0b7b0bf71341c0477ff7a6fe1bc6477d290e59))
+
 # [2.4.0](https://github.com/xobotyi/cnbuilder/compare/v2.3.0...v2.4.0) (2020-03-02)
 
 
