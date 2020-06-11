@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/xobotyi/cnbuilder/compare/v2.5.0...v2.6.0) (2020-06-11)
+
+
+### Features
+
+* export ClassValue type from index file. ([4778493](https://github.com/xobotyi/cnbuilder/commit/4778493f85e28e716ecf797fe64abaf7496f5470))
+
 # [2.5.0](https://github.com/xobotyi/cnbuilder/compare/v2.4.0...v2.5.0) (2020-05-21)
 
 
