@@ -337,9 +337,9 @@ clsx@*:
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 cnbuilder@*:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/cnbuilder/-/cnbuilder-2.5.0.tgz#50f55932f672c413515d9d5bb21d4b7a7a60b07b"
-  integrity sha512-Ddxm+RpEs/atVU7Kgbt1qgLHaJHdHBpIiP+lAKgdF16YJtDcIXTKUuTrk47DgJ4D8OpUe/mKvKD0R+kfxcJQ4w==
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/cnbuilder/-/cnbuilder-2.6.0.tgz#309b4f34371be80ad5452f983b7bac1af4f09ac8"
+  integrity sha512-SA2gBDcU6B9T1uMhA3m13dVffdaA8RC9TIz7zQygYwbdwOf6l8IGem5UbDc661W2YcQ0aiwt6FqDhDpAE7YUqA==
 
 color-convert@^1.9.0:
   version "1.9.3"
