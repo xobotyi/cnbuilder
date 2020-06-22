@@ -10,11 +10,10 @@ cache:
 script:
   - yarn lint
   - yarn build
-  - yarn test
+  - yarn test:coverage
 
 after_script:
-  - yarn add -D codacy-coverage
-  - cat ./coverage/lcov.info | codacy-coverage
+  - bash <(wget -q -O - https://coverage.codacy.com/get.sh)
 
 deploy:
   skip_cleanup: true

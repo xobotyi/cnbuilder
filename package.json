@@ -59,7 +59,8 @@
     "lint:fix": "yarn lint --fix",
     "lint:types": "tsc --noEmit",
     "build": "rimraf ./dist && rollup --config",
-    "test": "jest",
+    "test": "jest --coverage=false",
+    "test:coverage": "jest --coverage",
     "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release"
   },
