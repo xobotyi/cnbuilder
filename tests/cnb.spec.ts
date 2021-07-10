@@ -11,7 +11,9 @@ describe('cnb', () => {
     expect(cnb('a', 'b', 'c', '')).toBe('a b c');
     expect(cnb(['a'], ['b', 'c'], [''])).toBe('a b c');
     expect(cnb({ a: true }, { b: true, c: true }, { '': true })).toBe('a b c');
-    expect(cnb({ a: true, d: false }, { b: true, c: true }, { '': true })).toBe('a b c');
+    expect(cnb({ a: true, d: false }, { b: true, c: true }, { '': true })).toBe(
+      'a b c'
+    );
   });
 
   it('should return empty string if called w/o arguments', () => {
@@ -37,7 +39,7 @@ describe('cnb', () => {
   });
 
   it('should ignore invalid entries', () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     expect(cnb(NaN, undefined, null, 123, () => {}, [null, NaN])).toBe('');

@@ -1,4 +1,10 @@
-export type ClassValue = string | null | boolean | undefined | IClassListDictionary | ClassListArray;
+export type ClassValue =
+  | string
+  | null
+  | boolean
+  | undefined
+  | IClassListDictionary
+  | ClassListArray;
 
 export type ClassListArray = ClassValue[];
 

@@ -10,7 +10,7 @@ function Storage(): void {}
 /* istanbul ignore next */
 Storage.prototype = create(null);
 
-function addVal(val: ClassValue, storage: object): void {
+function addVal(val: ClassValue, storage: Record<string, unknown>): void {
   if (!val) return;
 
   let l;
