@@ -1,39 +1,27 @@
-import { ClassListArray, ClassValue } from './types';
+import { ClassListArray } from './types';
 
 const { isArray } = Array;
 
-const toVal = (val: ClassValue): string => {
-  if (!val) return '';
-
+const toClassName = (val: any): string => {
   if (typeof val === 'string') return val;
 
   if (typeof val !== 'object') return '';
 
   let str = '';
   let tmp;
-  let l;
 
   if (isArray(val)) {
-    l = val.length;
-
-    if (l === 0) return '';
-
-    if (l === 1) return toVal(val[0]);
-
     let i = 0;
 
-    while (i < l) {
-      tmp = toVal(val[i++]);
-
+    while (i < val.length) {
+      tmp = toClassName(val[i++]);
       if (tmp) str += (str && ' ') + tmp;
     }
-
-    return str;
-  }
-
-  for (tmp in val) {
-    if (val[tmp] && tmp) {
-      str += (str && ' ') + tmp;
+  } else {
+    for (tmp in val) {
+      if (val[tmp] && tmp) {
+        str += (str && ' ') + tmp;
+      }
     }
   }
 
@@ -42,19 +30,12 @@ const toVal = (val: ClassValue): string => {
 
 export function cnb(...args: ClassListArray): string;
 export function cnb(): string {
-  const l = arguments.length;
-
-  if (l === 0) return '';
-
-  if (l === 1) return toVal(arguments[0]);
-
   let i = 0;
-  let str = '';
   let tmp;
+  let str = '';
 
-  while (i < l) {
-    tmp = toVal(arguments[i++]);
-
+  while (i < arguments.length) {
+    tmp = toClassName(arguments[i++]);
     if (tmp) str += (str && ' ') + tmp;
   }
 

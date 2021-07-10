@@ -5,8 +5,10 @@ const { create } = Object;
 const { isArray } = Array;
 
 /* istanbul ignore next */
+
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 function Storage(): void {}
+
 /* istanbul ignore next */
 Storage.prototype = create(null);
 
@@ -42,15 +44,15 @@ function addVal(val: ClassValue, storage: Record<string, unknown>): void {
 
 export function dcnb(...args: ClassListArray): string;
 export function dcnb(): string {
-  const l = arguments.length;
-
   const storage = new Storage();
+  let i: number | string = 0;
 
-  for (let i = 0; i < l; i++) addVal(arguments[i], storage);
+  while (i < arguments.length) {
+    addVal(arguments[i++], storage);
+  }
 
   let str = '';
 
-  let i;
   for (i in storage) if (storage[i] && i) str += (str && ' ') + i;
 
   return str;

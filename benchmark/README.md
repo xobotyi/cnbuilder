@@ -12,7 +12,7 @@ yarn && yarn build && cd benchmark && yarn bench:dedupe
 ```
 
 ##### Recent results
-Below results received with nodejs 13 run on Win10 Intel I7 5820K with 16 Gb of RAM.
+Below results received with nodejs 16 run on Win10 Ryzen 3950x with 32 Gb of RAM.
 
 #### `cnb` (common version)
 > *Note:* `classcat` has different api, not compatible with `classnames`.

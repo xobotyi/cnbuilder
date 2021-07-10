@@ -7,11 +7,11 @@ const cnbuilderLocal = require('../../dist').cnb;
 const runTests = require('./run');
 
 const libraries = {
-  'classnames       ': args => classnames.apply(classnames, args),
+  'classnames       ': (args) => classnames.apply(classnames, args),
   // 'classcat         ': args => classcat.call(classcat, args),
-  'clsx             ': args => clsx.apply(clsx, args),
-  'cnbuilder (local)': args => cnbuilderLocal.apply(cnbuilderLocal, args),
-  'cnbuilder (npm)  ': args => cnbuilderNpm.apply(cnbuilderNpm, args),
+  'clsx             ': (args) => clsx.apply(clsx, args),
+  'cnbuilder (local)': (args) => cnbuilderLocal.apply(cnbuilderLocal, args),
+  'cnbuilder (npm)  ': (args) => cnbuilderNpm.apply(cnbuilderNpm, args),
 };
 
 const testData = [
@@ -22,8 +22,8 @@ const testData = [
   {
     name: 'objects',
     data: [
-      {foo: true, bar: true, bax: true, bux: false},
-      {baz: true, bax: false, bux: true},
+      { foo: true, bar: true, bax: true, bux: false },
+      { baz: true, bax: false, bux: true },
     ],
   },
   {
@@ -43,13 +43,18 @@ const testData = [
   {
     name: 'objects nested in arrays',
     data: [
-      ['foo', {bar: true, bax: true, bux: false}],
-      ['bax', {bax: false, bux: true}],
+      ['foo', { bar: true, bax: true, bux: false }],
+      ['bax', { bax: false, bux: true }],
     ],
   },
   {
     name: 'mixed',
-    data: ['foo', 'bar', {bax: true, bux: false}, ['baz', {bax: false, bux: true}]],
+    data: [
+      'foo',
+      'bar',
+      { bax: true, bux: false },
+      ['baz', { bax: false, bux: true }],
+    ],
   },
   {
     name: 'mixed with wrong data',
@@ -57,10 +62,9 @@ const testData = [
       'foo',
       'bar',
       undefined,
-      () => {
-      },
-      {bax: true, bux: false, 123: true},
-      ['baz', {bax: false, bux: true, abc: null}, {}],
+      () => {},
+      { bax: true, bux: false, 123: true },
+      ['baz', { bax: false, bux: true, abc: null }, {}],
     ],
   },
 ];
