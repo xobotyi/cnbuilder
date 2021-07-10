@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/xobotyi/cnbuilder/compare/v2.7.0...v2.7.1) (2021-07-10)
+
+
+### Bug Fixes
+
+* get rid of types.ts file ([37071e7](https://github.com/xobotyi/cnbuilder/commit/37071e782b527391199c6b21581ac881af242904))
+
 # [2.7.0](https://github.com/xobotyi/cnbuilder/compare/v2.6.0...v2.7.0) (2021-07-10)
 
 
