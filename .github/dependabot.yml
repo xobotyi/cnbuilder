@@ -16,3 +16,11 @@ updates:
     rebase-strategy: 'auto'
     ignore:
       - dependency-name: "husky"
+
+  - package-ecosystem: npm
+    directory: /benchmark
+    schedule:
+      interval: daily
+      time: "00:00"
+      timezone: "Etc/UTC"
+    rebase-strategy: 'auto'
