@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/xobotyi/cnbuilder/compare/v2.6.0...v2.7.0) (2021-07-10)
+
+
+### Features
+
+* improve performance on arrays and objects ([58dda12](https://github.com/xobotyi/cnbuilder/commit/58dda1220efa6f5dee98d07513b8eb441303c6a4))
+
 # [2.6.0](https://github.com/xobotyi/cnbuilder/compare/v2.5.0...v2.6.0) (2020-06-11)
 
 
