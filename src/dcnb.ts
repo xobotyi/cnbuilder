@@ -1,4 +1,4 @@
-import { ClassListArray, ClassValue } from './types';
+import type { ClassListArray, ClassValue } from './cnb';
 
 const SPACE_REGEX = /\s+/;
 const { create } = Object;
