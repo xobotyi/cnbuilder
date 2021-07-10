@@ -1,29 +1,17 @@
 <div align="center">
-  <h1>cnbuilder</h1>
-  <p>Yet another classname string builder (the fastest one)</p>
-  <p>
-    <a href="https://travis-ci.org/xobotyi/cnbuilder">
-        <img src="https://flat.badgen.net/travis/xobotyi/scrollbar-width" alt="Build status"/>
-    </a>
-    <a href="https://www.npmjs.com/package/cnbuilder">
-        <img src="https://flat.badgen.net/npm/v/cnbuilder" alt="NPM version"/>
-    </a>
-    <a href="https://www.npmjs.com/package/cnbuilder">
-        <img src="https://flat.badgen.net/npm/dw/cnbuilder" alt="NPM weekly downloads"/>
-    </a>
-    <a href="https://www.npmjs.com/package/cnbuilder">
-        <img src="https://flat.badgen.net/npm/license/cnbuilder" alt="License"/>
-    </a>
-    <a href="https://www.npmjs.com/package/cnbuilder">
-        <img src="https://flat.badgen.net/npm/types/cnbuilder" alt="Types definition"/>
-    </a>
-    <a href="https://www.codacy.com/manual/xobotyi/cnbuilder">
-        <img src="https://flat.badgen.net/codacy/grade/71cdf9626f264970a23706c93b83a4bb" alt="Codacy Code Grade"/>
-    </a>
-    <a href="https://www.codacy.com/manual/xobotyi/cnbuilder">
-        <img src="https://flat.badgen.net/codacy/coverage/71cdf9626f264970a23706c93b83a4bb" alt="Tests LOC"/>
-    </a>
-  </p>
+
+# cnbuilder
+
+Yet another classname string builder (the fastest one)
+
+[![NPM Version](https://flat.badgen.net/npm/v/cnbuilder)](https://www.npmjs.com/package/cnbuilder)
+[![NPM Downloads](https://flat.badgen.net/npm/dm/cnbuilder)](https://www.npmjs.com/package/cnbuilder)
+[![NPM Dependents](https://flat.badgen.net/npm/dependents/cnbuilder)](https://www.npmjs.com/package/cnbuilder)
+[![Build](https://img.shields.io/github/workflow/status/xobotyi/cnbuilder/CI?style=flat-square)](https://github.com/xobotyi/cnbuilder/actions)
+[![Coverage](https://flat.badgen.net/codecov/c/github/xobotyi/cnbuilder)](https://app.codecov.io/gh/xobotyi/cnbuilder)
+[![Types](https://flat.badgen.net/npm/types/cnbuilder)](https://www.npmjs.com/package/cnbuilder)
+[![Tree Shaking](https://flat.badgen.net/bundlephobia/tree-shaking/cnbuilder)](https://bundlephobia.com/result?p=cnbuilder)
+
 </div>
 
 ---
