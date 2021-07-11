@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/xobotyi/cnbuilder/compare/v3.0.0...v3.0.1) (2021-07-11)
+
+
+### Bug Fixes
+
+* proper package.json configuration ([a1d2e43](https://github.com/xobotyi/cnbuilder/commit/a1d2e43b22274e0cc229d503a69e4ddc3598f35a))
+
 # [3.0.0](https://github.com/xobotyi/cnbuilder/compare/v2.7.1...v3.0.0) (2021-07-11)
 
 

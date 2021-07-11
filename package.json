@@ -1,7 +1,7 @@
 {
   "name": "cnbuilder",
   "description": "Yet another classname string builder (the fastest one)",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "files": [
     "cjs",
     "esm",
