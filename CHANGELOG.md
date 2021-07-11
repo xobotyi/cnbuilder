@@ -1,3 +1,19 @@
+# [3.0.0](https://github.com/xobotyi/cnbuilder/compare/v2.7.1...v3.0.0) (2021-07-11)
+
+
+### Features
+
+* tweak distribution bundle and build process ([09ee7ce](https://github.com/xobotyi/cnbuilder/commit/09ee7ceffbb6125dac1670039606566cc817ed75))
+
+
+### BREAKING CHANGES
+
+* now distributed version contained in separate folders: `cjs`, `esm` and
+`esnext`
+
+To include esnext version of package you now have to do
+`import { cnb } from 'cnbuilder/esnext'`
+
 ## [2.7.1](https://github.com/xobotyi/cnbuilder/compare/v2.7.0...v2.7.1) (2021-07-10)
 
 
