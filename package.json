@@ -2,14 +2,16 @@
   "name": "cnbuilder",
   "description": "Yet another classname string builder (the fastest one)",
   "version": "3.0.0",
-  "main": "cjs/index.js",
-  "module": "esm/index.esm.js",
-  "esnext": "esnext/index.esnext.js",
-  "types": "cjs/index.d.ts",
-  "sideEffects": false,
   "files": [
-    "dist"
+    "cjs",
+    "esm",
+    "esnext"
   ],
+  "main": "cjs/index.js",
+  "esnext": "esnext/index.js",
+  "types": "cjs/index.d.ts",
+  "module": "esm/index.js",
+  "sideEffects": false,
   "keywords": [
     "classname",
     "class",
