@@ -3,7 +3,7 @@ const classnames = require('classnames');
 // classcat somewhy uses ES6 export for browser
 const clsx = require('clsx');
 const cnbuilderNpm = require('cnbuilder/dist').cnb;
-const cnbuilderLocal = require('../../dist').cnb;
+const cnbuilderLocal = require('../../esnext').cnb;
 const runTests = require('./run');
 
 const libraries = {

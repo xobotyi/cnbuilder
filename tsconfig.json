@@ -1,11 +1,13 @@
 {
   "extends": "@xobotyi/preset-typescript/tsconfig.json",
   "compilerOptions": {
-    "sourceMap": false,
-    "resolveJsonModule": false,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node"
+    "strict": true,
+    "alwaysStrict": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "noEmit": true,
+    "sourceMap": false
   },
   "include": [
     "./src/**/*.ts"
