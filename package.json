@@ -46,7 +46,7 @@
     "@xobotyi/eslint-config": "^2.2.0",
     "@xobotyi/preset-typescript": "^1.0.0",
     "concurrently": "^6.2.0",
-    "eslint": "^7.0.0",
+    "eslint": "^8.5.0",
     "husky": "4.3.8",
     "jest": "^27.0.6",
     "lint-staged": "^11.0.0",
