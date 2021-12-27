@@ -46,14 +46,22 @@ export function dcnb(...args: ClassListArray): string;
 export function dcnb(): string {
   const storage = new Storage();
   let i: number | string = 0;
+  const l = arguments.length;
 
-  while (i < arguments.length) {
+  while (i < l) {
     addVal(arguments[i++], storage);
   }
 
   let str = '';
 
-  for (i in storage) if (storage[i] && i) str += (str && ' ') + i;
+  for (i in storage) {
+    if (storage[i] && i) {
+      if (str) {
+        str += ' ';
+      }
+      str += i;
+    }
+  }
 
   return str;
 }

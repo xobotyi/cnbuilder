@@ -1,23 +1,23 @@
 const classnames = require('classnames');
-// const classcat = require('classcat');
+const classcat = require('classcat');
 // classcat somewhy uses ES6 export for browser
 const clsx = require('clsx');
-const cnbuilderNpm = require('cnbuilder/dist').cnb;
-const cnbuilderLocal = require('../../esnext').cnb;
+// const cnbuilderNpm = require('cnbuilder/cjs').cnb;
+const cnbuilderLocal = require('../../cjs').cnb;
 const runTests = require('./run');
 
 const libraries = {
-  'classnames       ': (args) => classnames.apply(classnames, args),
-  // 'classcat         ': args => classcat.call(classcat, args),
-  'clsx             ': (args) => clsx.apply(clsx, args),
-  'cnbuilder (local)': (args) => cnbuilderLocal.apply(cnbuilderLocal, args),
-  'cnbuilder (npm)  ': (args) => cnbuilderNpm.apply(cnbuilderNpm, args),
+  // 'cnbuilder (npm)': (args) => cnbuilderNpm.apply(cnbuilderNpm, args),
+  cnbuilder: (args) => cnbuilderLocal.apply(cnbuilderLocal, args),
+  classnames: (args) => classnames.apply(classnames, args),
+  clsx: (args) => clsx.apply(clsx, args),
+  classcat: (args) => classcat.call(classcat, args),
 };
 
 const testData = [
   {
     name: 'strings',
-    data: ['foo', '', 'bar', 'baz', 'bax', 'bux'],
+    data: ['foo', '', 'bar', 'baz', '', 'bax', 'bux'],
   },
   {
     name: 'objects',
