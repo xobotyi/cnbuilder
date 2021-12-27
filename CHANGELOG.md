@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/xobotyi/cnbuilder/compare/v3.0.1...v3.1.0) (2021-12-27)
+
+
+### Features
+
+* enhance performance ([7aefefd](https://github.com/xobotyi/cnbuilder/commit/7aefefd2a3f9ee73326e32cf7b820a5b3a3280b2))
+
 ## [3.0.1](https://github.com/xobotyi/cnbuilder/compare/v3.0.0...v3.0.1) (2021-07-11)
 
 
