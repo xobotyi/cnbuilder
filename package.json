@@ -41,7 +41,7 @@
     "@jamesacarr/jest-reporter-github-actions": "^0.0.4",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
-    "@semantic-release/npm": "^8.0.0",
+    "@semantic-release/npm": "^9.0.0",
     "@types/jest": "^27.0.0",
     "@xobotyi/eslint-config": "^2.3.0",
     "@xobotyi/preset-typescript": "^1.0.0",
