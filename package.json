@@ -48,7 +48,7 @@
     "concurrently": "^7.0.0",
     "eslint": "^8.5.0",
     "husky": "7.0.4",
-    "jest": "^27.0.6",
+    "jest": "^28.0.0",
     "lint-staged": "^12.1.4",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
