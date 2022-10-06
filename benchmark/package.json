@@ -13,6 +13,6 @@
     "classnames": "*",
     "clsx": "*",
     "cnbuilder": "*",
-    "open-cli": "^7.0.1"
+    "open-cli": "^7.1.0"
   }
 }
