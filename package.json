@@ -37,7 +37,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@jamesacarr/eslint-formatter-github-actions": "^0.1.0",
+    "@jamesacarr/eslint-formatter-github-actions": "^0.2.0",
     "@jamesacarr/jest-reporter-github-actions": "^0.0.4",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
