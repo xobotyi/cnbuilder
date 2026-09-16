@@ -14,6 +14,10 @@ Yet another classname string builder (the fastest one)
 
 </div>
 
+> **Archived.** cnbuilder existed to serve [react-scrollbars-custom](https://github.com/xobotyi/react-scrollbars-custom),
+> which is archived too. The package stays installable from npm and keeps working, but receives no updates. For new
+> code use [clsx](https://github.com/lukeed/clsx).
+
 ---
 
 <div align="center">❤️Please consider starring this project to show your love and support.🙌</div>
